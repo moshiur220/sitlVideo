@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="22" viewBox="0 0 25 22">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_12" data-name="Rectangle 12" width="25" height="22" transform="translate(-15570.058 520.942)" fill="#f76215"/>
+    </clipPath>
+  </defs>
+  <g id="Sound_on" data-name="Sound  on" transform="translate(15570.058 -520.942)" clip-path="url(#clip-path)">
+    <g id="volume-high-outline" transform="translate(-15568.306 523.15)">
+      <path id="Path_10246" data-name="Path 10246" d="M9.349,16.595H5.767A.409.409,0,0,0,5.357,17v5.732a.409.409,0,0,0,.409.409H9.331a.815.815,0,0,1,.519.181l4.681,3.833a.409.409,0,0,0,.652-.329V12.91a.409.409,0,0,0-.652-.329L9.85,16.414a.768.768,0,0,1-.5.181Z" transform="translate(-5.357 -11.682)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_10247" data-name="Path 10247" d="M35.714,27.979a7.26,7.26,0,0,0,.819-3.275,7.073,7.073,0,0,0-.819-3.275" transform="translate(-21.794 -16.516)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_10248" data-name="Path 10248" d="M41.071,27.535A10.439,10.439,0,0,0,42.709,21.8a10.265,10.265,0,0,0-1.638-5.732" transform="translate(-24.695 -13.615)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_10249" data-name="Path 10249" d="M46.429,27.091A13.809,13.809,0,0,0,48.885,18.9a13.924,13.924,0,0,0-2.456-8.188" transform="translate(-27.596 -10.714)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

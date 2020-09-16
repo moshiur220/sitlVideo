@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3" data-name="Rectangle 3" width="22" height="22" transform="translate(111 757)" fill="#f76215"/>
+    </clipPath>
+  </defs>
+  <g id="Chat_Icon" data-name="Chat Icon" transform="translate(-111 -757)" clip-path="url(#clip-path)">
+    <g id="chatbubble-ellipses-outline_1_" data-name="chatbubble-ellipses-outline (1)" transform="translate(109.429 755.429)">
+      <path id="Path_10264" data-name="Path 10264" d="M4.3,18.661a1.11,1.11,0,0,0-.193-.73,2.093,2.093,0,0,0-.125-.187,9.812,9.812,0,0,1-1.621-5.4A10.077,10.077,0,0,1,12.563,2.357a10.171,10.171,0,0,1,10.006,7.948,9.772,9.772,0,0,1,.218,2.045A10.013,10.013,0,0,1,12.739,22.413,12.022,12.022,0,0,1,9.966,22c-.661-.185-1.322-.431-1.492-.5a1.529,1.529,0,0,0-.547-.1,1.508,1.508,0,0,0-.593.119L4,22.726a.782.782,0,0,1-.229.06.472.472,0,0,1-.47-.478.778.778,0,0,1,.029-.162Z" fill="none" stroke="#f76215" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.571"/>
+      <circle id="Ellipse_3191" data-name="Ellipse 3191" cx="1.571" cy="1.571" r="1.571" transform="translate(6.286 11)" fill="#f76215"/>
+      <circle id="Ellipse_3192" data-name="Ellipse 3192" cx="1.571" cy="1.571" r="1.571" transform="translate(11 11)" fill="#f76215"/>
+      <circle id="Ellipse_3193" data-name="Ellipse 3193" cx="1.571" cy="1.571" r="1.571" transform="translate(15.714 11)" fill="#f76215"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,29 @@
+.conversation-person .dz-msg-img {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.conversation-person {
+    display: inline-flex;
+    align-items: center;
+}
+
+ion-content{
+    --ion-background-color:#f7f7f7;
+}
+.native-input{
+    padding-left: 15px;
+}
+@media only screen and (min-width: 575px) {
+    .footer-shap-inner svg{
+        display: none;
+    }
+    .footer-shap-inner {
+        height: 86px;
+        background: var(--themecolor);
+    }
+}

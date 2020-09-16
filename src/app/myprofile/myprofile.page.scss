@@ -1,0 +1,104 @@
+ion-content{
+    --background: var(--themecolor)
+}
+.page-title h3 {
+    font-size: 30px;
+    color: var(--white);
+    padding-left: 30px;
+    padding-top: 70px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 39px;
+}
+.ellipse{
+    background: #FF7833;
+    border-radius: 50%;
+    position: absolute;
+}
+.ellipse1 {
+    height: 90px;
+    width: 90px;
+    top: 58px;
+    left: -60px;
+}
+.ellipse2 {
+    height: 20px;
+    width: 20px;
+    top: 128px;
+    left: 49%;
+    background: #FF7833;
+}
+.ellipse3 {
+    height: 90px;
+    width: 90px;
+    top: 87px;
+    right: -45px;
+    background: #FF7833;
+}
+.ellipse4 {
+    height: 50px;
+    width: 50px;
+    top: 190px;
+    right: 90px;
+    background: #FF7833;
+}
+.my-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--white);
+}
+.account-control {
+    margin-top: 155px;
+    background: var(--white);
+}
+
+.my-image-inner {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.my-image-inner .my-image {
+    margin: auto;
+}
+
+.account-control ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px;
+    border-bottom: 1px solid #CCCCCC;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.account-control ul li p{
+    color: var(--themecolor);
+    font-size: 16px;
+    font-weight: 300;
+}
+.account-control {
+    padding-bottom: 121px;
+}
+
+.account-control .control-list {
+    padding-top: 80px;
+}
+
+.image-edit {
+    background: var(--themecolor);
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 15px;
+    bottom: 0;
+}
+@media only screen and (min-width: 575px) {
+    .footer-shap-inner svg{
+        display: none;
+    }
+    .footer-shap-inner {
+        height: 86px;
+        background: var(--themecolor);
+    }
+}

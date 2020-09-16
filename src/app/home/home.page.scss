@@ -1,0 +1,150 @@
+.preloader {
+  height: 100vh;
+  background: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ellipse{
+  background: var(--themecolor);
+  border-radius: 50%;
+  position: absolute;
+}
+.ellipse1 {
+  height: 90px;
+  width: 90px;
+  top: 42px;
+  right: -45px;
+}
+.ellipse2 {
+  height: 70px;
+  width: 70px;
+  top: 92px;
+  left: 73px;
+  background:#974B24;
+}
+.ellipse3 {
+  height: 40px;
+  width: 40px;
+  top: 34%;
+  left: 50px;
+  background: #77320E;
+}
+.ellipse4 {
+  height: 40px;
+  width: 40px;
+  top: 70%;
+  right: 88px;
+  background: #77320E;
+}
+.ellipse5 {
+  height: 90px;
+  width: 90px;
+  bottom: 42px;
+  left: -30px;
+}
+
+
+
+/* main content */
+ion-content{
+  --background: var(--themebg)
+}
+.welcome-inner h3 {
+  font-size: 30px;
+  color: var(--themecolor);
+  padding-left: 30px;
+  padding-top: 70px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 39px;
+}
+ion-slides{
+  --bullet-background: red;
+  --bullet-background-active: var(--themecolor)
+}
+.log-info-inner .log-btn {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 17px;
+  border-radius: 7px;
+  border: 1px solid var(--themecolor);
+  position: relative;
+  background: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--themecolor);
+}
+
+.log-info-inner {
+  padding: 0 18px;
+  z-index: 100;
+  position: relative;
+  margin-bottom: 65px;
+}
+
+.log-info-inner .log-btn.active-log-btn {
+  background: var(--themecolor);
+  color: var(--white);
+}
+.slider-inner{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+@media only screen and (min-width: 575px) {
+  .footer-shap-inner svg{
+      display: none;
+  }
+  .footer-shap-inner {
+      height: 86px;
+      background: var(--themecolor);
+  }
+}
+
+@media only screen and (min-width: 391px)  and (max-width: 450px){
+  .slider-inner{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .log-info-inner .log-btn {
+    height: 40px;
+  }
+  .log-info-inner{
+    margin-bottom: 30px
+  }
+
+}
+@media only screen and (min-width: 321px)  and (max-width: 390px){
+  .slider-inner{
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .welcome-inner h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .log-info-inner .log-btn {
+    height: 40px;
+  }
+  .log-info-inner{
+    margin-bottom: 30px
+  }
+
+}
+@media only screen and (max-width: 320px) {
+  .slider-inner{
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .welcome-inner h3 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .log-info-inner .log-btn {
+    height: 40px;
+  }
+  .log-info-inner{
+    margin-bottom: 30px
+  }
+}

@@ -1,0 +1,874 @@
+/* common */
+@font-face {
+  font-family: SFProSemiBold;
+  src: url(../fonts/sf-pro/FontsFree-Net-SFProDisplay-Semibold.ttf);
+}
+
+@font-face {
+  font-family: SFProReg;
+  src: url(../fonts/sf-pro/FontsFree-Net-SFProDisplay-Regular.ttf);
+}
+
+@font-face {
+  font-family: SFProBold;
+  src: url(../fonts/sf-pro/FontsFree-Net-SFProDisplay-Bold.ttf);
+}
+
+@font-face {
+  font-family: SFProMedium;
+  src: url(../fonts/sf-pro/FontsFree-Net-SFProText-Medium.ttf);
+}
+
+@font-face {
+  font-family: AdventMedium;
+  src: url(../fonts/advent-pro/AdventPro-Medium.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:focus,
+*:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul li,
+ol li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: 0;
+}
+
+.dz-clear {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --red: #ff3b30;
+  --orange: #ff9500;
+  --yellow: #ffcc00;
+  --green: #34c759;
+  --teal: #5ac8fa;
+  --blue: #007aff;
+  --indigo: #5856d6;
+  --purple: #af52de;
+  --pink: #ff2d55;
+  --grey0: #f7f7fa;
+  --grey5: #f0f0f3;
+  --grey10: #e6e4ea;
+  --grey20: #d1cfd7;
+  --grey30: #b8b6bf;
+  --grey40: #9a99a2;
+  --grey50: #77767e;
+  --grey60: #4e4e53;
+  --grey70: #232326;
+  --gradient-primary: linear-gradient(to bottom, #1ac9fc, #1d73f1);
+  --gradient-accent: linear-gradient(to bottom, #ff60ab, #ff2f21);
+  --gradient-purple: linear-gradient(to bottom, #eb4dbf, #cb44f5);
+  --gradient-pink: linear-gradient(to bottom, #fb5d6e, #d05ca9);
+  --gradient-violet: linear-gradient(to bottom, #dd6291, #5d97f5);
+  --gradient-grey: linear-gradient(to bottom, #a5aab7, #848993);
+}
+
+.dz-flex-style {
+  display: flex;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+  background: transparent;
+}
+
+button:hover,
+button:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+input:hover,
+input:focus {
+  outline: 0;
+}
+
+/* contact */
+.dz-contact {
+  overflow-y: scroll;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to top,
+    hsla(223, 11%, 68%, 0.4) 20%,
+    hsla(223, 11%, 68%, 0.2) 40%,
+    #fff 60%
+  );
+  position: relative;
+}
+
+/* dark */
+.dz-contact-dark {
+  background: var(--grey60);
+}
+
+/* contact-search head */
+.dz-contact-search .dz-search {
+  margin-top: 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dz-contact-search .dz-search .dz-search-field {
+  width: calc(100% - 30px);
+  height: 28px;
+  border-radius: 99px;
+  border: 1px solid var(--orange);
+  padding: 0 15px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.dz-contact-search .dz-search .dz-search-field::placeholder {
+  font-size: 13px;
+  color: var(--grey40);
+  text-transform: capitalize;
+  font-family: SFProReg;
+}
+
+.dz-contact-search .dz-search button {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+/* contact head */
+.dz-contact .dz-cont-head {
+  width: 100%;
+  padding: 20px 15px 10px 15px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--grey10);
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  z-index: 9;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-icon-back {
+  margin-top: -15px;
+  width: 20%;
+  text-align: left;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-title {
+  width: 60%;
+  text-align: center;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-title h2 {
+  text-transform: capitalize;
+  color: var(--grey60);
+  font-size: 22px;
+  list-style: 28px;
+  font-family: SFProBold;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-title p {
+  color: var(--grey40);
+  font-size: 15px;
+  list-style: 20px;
+  font-family: AdventMedium;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-search {
+  width: 20%;
+  text-align: right;
+}
+
+.dz-contact .dz-cont-head .dz-cont-title .dz-search button {
+  text-transform: capitalize;
+  color: var(--orange);
+  font-size: 17px;
+  list-style: 22px;
+  font-family: SFProReg;
+}
+
+/* dark */
+.dz-contact-dark .dz-cont-head {
+  border: 0;
+  background: var(--grey60);
+}
+
+.dz-contact-dark .dz-cont-head .dz-cont-title .dz-icon-back {
+  margin-top: 0;
+}
+
+.dz-contact-dark .dz-cont-head .dz-cont-title .dz-title h2,
+.dz-contact-dark .dz-cont-head .dz-cont-title .dz-title p {
+  color: var(--grey20);
+}
+
+.dz-contact-dark .dz-cont-head .dz-cont-title .dz-title p {
+  font-family: SFProReg;
+}
+
+/* add chat button */
+.dz-add-chat {
+  height: 62px;
+  width: 62px;
+  position: fixed;
+  right: 15px;
+  bottom: 44px;
+}
+
+.dz-add-chat button {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  border-bottom-right-radius: 2px;
+  background: var(--gradient-grey);
+}
+
+/* dark */
+.dz-contact-dark .dz-add-chat button {
+  background: var(green);
+  border-radius: 50%;
+}
+
+/* contact nav */
+.dz-nav .dz-navs {
+  margin-top: 20px;
+  border: 1px solid var(--orange);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.dz-nav .dz-navs li {
+  width: 33.33%;
+  text-align: center;
+  border-right: 1px solid var(--orange);
+}
+
+.dz-nav .dz-navs li:last-child {
+  border-right: 0;
+}
+
+.dz-nav .dz-navs li button {
+  width: 100%;
+  line-height: 28px;
+  text-transform: capitalize;
+  font-size: 13px;
+  font-family: SFProReg;
+  color: var(--orange);
+}
+
+.dz-nav .dz-navs li.active button {
+  background: var(--orange);
+  color: var(--white);
+}
+
+/* dark */
+.dz-contact-dark .dz-nav .dz-navs {
+  border: 0;
+  background: hsla(240, 4%, 14%, 0.72);
+  overflow: hidden;
+}
+
+.dz-contact-dark .dz-nav .dz-navs li {
+  border: 0;
+}
+
+.dz-contact-dark .dz-nav .dz-navs li button {
+  color: var(--grey0);
+}
+
+.dz-contact-dark .dz-nav .dz-navs li.active button {
+  background: var(--green);
+  color: var(--black);
+}
+
+/* cont slider */
+.dz-cont-slider {
+  margin-top: 120px;
+  padding: 20px 0 24px;
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: 1px dashed var(--grey10);
+}
+
+.dz-cont-slider .dz-slider-title {
+  padding: 0 15px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.dz-cont-slider .dz-slider-title h3 {
+  text-transform: capitalize;
+  font-size: 17px;
+  line-height: 30px;
+  color: var(--black);
+  font-family: SFProSemiBold;
+}
+
+.dz-cont-slider .dz-slider-title button {
+  display: flex;
+  align-items: center;
+  color: var(--grey60);
+  font-size: 13px;
+  line-height: 30px;
+  font-family: SFProReg;
+}
+
+.dz-cont-slider .dz-slider-part .slick-list {
+  padding-right: 52px;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item {
+  /* height: 70px; */
+  width: 64px;
+  text-align: center;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item:focus {
+  outline: 0;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item .dz-image {
+  height: 44px;
+  width: 44px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item .dz-image .dz-fig {
+  border-radius: 50%;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item.dz-active .dz-image:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 12px;
+  width: 12px;
+  content: "";
+  background: url(../images/Status-green.png) no-repeat center;
+}
+
+.dz-cont-slider .dz-slider-part .dz-item h4 {
+  color: var(--grey70);
+  font-size: 15px;
+  line-height: 20px;
+  font-family: AdventMedium;
+  font-weight: normal;
+}
+
+/* dark */
+.dz-contact-dark .dz-cont-slider {
+  border-color: var(--grey50);
+}
+
+.dz-contact-dark .dz-cont-slider .dz-slider-title h3 {
+  color: var(--white);
+}
+
+.dz-contact-dark .dz-cont-slider .dz-slider-title button {
+  border: 1px solid var(--grey50);
+  padding-left: 12px;
+  border-radius: 10px;
+  color: var(--white);
+}
+
+.dz-contact-dark
+  .dz-cont-slider
+  .dz-slider-part
+  .dz-item.dz-active
+  .dz-image:after {
+  background: url(../images/Status.png) no-repeat center;
+}
+
+.dz-contact-dark .dz-cont-slider .dz-slider-part .dz-item h4 {
+  color: var(--white);
+  font-family: SFProReg;
+  font-weight: normal;
+}
+
+/* chat part */
+.dz-chats {
+  padding: 0 15px 60px 15px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    to top,
+    hsla(223, 11%, 68%, 0.4) 20%,
+    hsla(223, 11%, 68%, 0.2) 40%,
+    #fff 60%
+  );
+  height: 100vh;
+}
+
+.dz-chats .dz-chat-list li {
+  /* height: 44px; */
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-img {
+  height: 44px;
+  width: 44px;
+  position: relative;
+  margin-bottom: 8px;
+  float: left;
+  margin-right: 10px;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-img span {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: var(--white);
+  font-size: 12px;
+  font-family: SFProReg;
+  display: inline-block;
+  text-align: center;
+  line-height: 18px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-img .dz-fig {
+  border-radius: 50%;
+}
+
+.dz-chats .dz-chat-list li.dz-active .dz-chat-img:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: url(../images/Status-green.png) no-repeat center;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-text h3 {
+  color: var(--grey70);
+  font-size: 17px;
+  line-height: 22px;
+  font-family: SFProReg;
+  text-transform: capitalize;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-text p {
+  color: var(--grey40);
+  font-size: 15px;
+  line-height: 20px;
+  font-family: AdventMedium;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-time {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.dz-chats .dz-chat-list li .dz-chat-time p {
+  color: var(--grey30);
+  font-size: 15px;
+  line-height: 20px;
+  font-family: AdventMedium;
+}
+
+/* dark */
+.dz-contact-dark .dz-chats .dz-chat-list li.dz-active .dz-chat-img:after {
+  background: url(../images/Status.png) no-repeat center;
+}
+
+.dz-contact-dark .dz-chats {
+  background: transparent;
+}
+
+.dz-contact-dark .dz-chats .dz-chat-list li .dz-chat-text h3 {
+  text-shadow: 0 2px 2px 0 hsla(240, 17%, 24%, 0.6);
+  color: var(--white);
+  font-weight: normal;
+}
+
+.dz-contact-dark .dz-chats .dz-chat-list li .dz-chat-text p {
+  color: var(--grey10);
+  font-family: SFProReg;
+}
+
+/* message */
+.dz-message {
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: 0 4px 4px 0 hsla(240, 17%, 24%, 0.1);
+  background: #f7f7f7;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+/* dark */
+.dz-msg-dark {
+  background: var(--grey70);
+}
+
+/* msg head */
+.dz-msg-head {
+  width: 100%;
+  padding-top: 10px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: var(--white);
+  z-index: 9;
+}
+
+.dz-msg-head .dz-left-part,
+.dz-msg-head .dz-right-part {
+  width: 25%;
+}
+
+.dz-msg-head button {
+  display: flex;
+  align-items: center;
+}
+
+.dz-msg-head .dz-msg-title {
+  text-align: center;
+  width: 50%;
+}
+
+.dz-msg-head .dz-left-part,
+.dz-msg-head .dz-right-part {
+  padding-top: 8px;
+}
+
+.dz-msg-head .dz-left-part button {
+  font-size: 17px;
+  color: var(--blue);
+  text-transform: capitalize;
+  padding-left: 8px;
+  font-family: SFProReg;
+}
+
+.dz-msg-head .dz-left-part button svg {
+  margin-right: 8px;
+}
+
+.dz-msg-head .dz-msg-title .dz-msg-img {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.dz-msg-head .dz-msg-title h2 {
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--grey70);
+  text-transform: capitalize;
+  font-family: SFProBold;
+}
+
+.dz-msg-head .dz-msg-title p {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--grey50);
+  text-transform: capitalize;
+  font-family: SFProReg;
+}
+
+.dz-msg-head .dz-right-part button {
+  padding-left: 16px;
+  height: 28px;
+}
+
+/* dark */
+.dz-msg-dark .dz-msg-head {
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--black);
+  background: var(--grey70);
+}
+
+.dz-msg-dark .dz-msg-head .dz-left-part button {
+  color: var(--white);
+  text-transform: capitalize;
+}
+
+.dz-msg-dark .dz-msg-head .dz-right-part button {
+  text-transform: capitalize;
+  color: var(--white);
+  font-family: SFProSemiBold;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.dz-msg-dark .dz-msg-head .dz-msg-title h2 {
+  color: var(--white);
+}
+
+.dz-msg-dark .dz-msg-head .dz-msg-title p {
+  color: var(--green);
+}
+
+/* msg time */
+.dz-msg-time {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.dz-msg-time p {
+  text-transform: uppercase;
+  color: var(--grey40);
+  font-size: 13px;
+  line-height: 18px;
+  font-family: SFProReg;
+}
+
+/* dark */
+.dz-msg-dark .dz-msg-time {
+  width: fit-content;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.dz-msg-dark .dz-msg-time p {
+  background: #000;
+  color: var(--white);
+  line-height: 30px;
+  padding: 0 11px;
+  border-radius: 99px;
+}
+
+/* live chat part */
+.dz-live-chat {
+  padding: 0 15px;
+  padding-bottom: 130px;
+}
+
+.dz-live-chat .dz-live-msg {
+  margin: 10px 0;
+  position: relative;
+}
+
+.dz-live-chat .dz-live-msg p {
+  font-size: 15px;
+  line-height: 20px;
+  font-family: AdventMedium;
+  padding: 15px;
+  margin-bottom: 4px;
+  border-radius: 20px;
+}
+
+.dz-live-chat .dz-live-msg p:last-child {
+  margin-bottom: 0;
+}
+
+.dz-live-chat .dz-right-msg p:first-child {
+  border-bottom-right-radius: 2px;
+}
+
+.dz-live-chat .dz-right-msg p:last-child {
+  border-top-right-radius: 2px;
+}
+
+.dz-live-chat .dz-right-msg {
+  float: right;
+  text-align: left;
+  max-width: 297px;
+}
+
+.dz-live-chat .dz-right-msg p {
+  background: var(--themecolor);
+  color: var(--white);
+  padding-right: 40px;
+}
+
+.dz-live-chat .dz-left-msg {
+  max-width: 259px;
+}
+
+.dz-live-chat .dz-left-msg p {
+  margin-left: 35px;
+  background: var(--white);
+  box-shadow: 0 2px 2px 0 hsla(240, 17%, 24%, 0.1);
+}
+
+.dz-live-chat .dz-left-msg p:first-child {
+  border-bottom-left-radius: 2px;
+}
+
+.dz-live-chat .dz-left-msg p:last-child {
+  border-top-left-radius: 2px;
+}
+
+.dz-live-chat .dz-live-msg .dz-live-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.dz-msg-text {
+  margin-top: 10px;
+  border-top: 1px solid var(--grey10);
+  width: 100%;
+  height: 50px;
+  padding: 10px 15px 0;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  background: var(--white);
+}
+
+.dz-msg-text .dz-msg-option li {
+  margin-right: 5px;
+}
+
+.dz-msg-text .dz-msg-option li button {
+  height: 34px;
+  width: 34px;
+  border-radius: 8px;
+  background: hsla(211, 100%, 50%, 0.2);
+}
+
+.dz-msg-text .dz-msg-option li button.dz-mic {
+  background: hsla(35, 100%, 50%, 0.2);
+}
+
+.dz-type-msg {
+  position: relative;
+  width: 100%;
+}
+
+.dz-type-msg .dz-text-field {
+  width: 100%;
+  height: 34px;
+  border-radius: 99px;
+  background: var(--white);
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.dz-type-msg .dz-text-field::placeholder {
+  text-transform: capitalize;
+  color: var(--grey40);
+  font-size: 17px;
+  font-family: SFProReg;
+}
+
+.dz-type-msg .dz-type-icon {
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+/* dark */
+.dz-msg-dark .dz-live-chat .dz-live-msg:first-child {
+  margin-top: 0;
+}
+
+.dz-msg-dark .dz-live-chat .dz-right-msg p:first-child {
+  border-bottom-right-radius: 20px;
+}
+
+.dz-msg-dark .dz-live-chat .dz-right-msg p:last-child {
+  border-top-right-radius: 20px;
+}
+
+.dz-msg-dark .dz-live-chat .dz-left-msg p {
+  background: var(--gradient-grey);
+  color: var(--white);
+}
+
+.dz-msg-dark .dz-msg-text .dz-msg-option li button {
+  background: var(--black);
+}
+
+.dz-msg-dark .dz-type-msg .dz-text-field {
+  background: var(--black);
+  border: 1px solid var(--grey50);
+  color: var(--white);
+}
+
+.dz-msg-dark .dz-type-msg .dz-type-icon {
+  right: 4px;
+}
+
+.dz-msg-dark .dz-msg-text {
+  background: #121214;
+  border-color: var(--black);
+}
+
+/* responsive */
+@media (min-width: 250px) and (max-width: 374px) {
+  .dz-contact .dz-cont-head .dz-cont-title .dz-search button {
+    font-size: 14px;
+  }
+
+  .dz-chats .dz-chat-list li .dz-chat-text p {
+    font-size: 12px;
+  }
+
+  .dz-msg-head .dz-left-part,
+  .dz-msg-head .dz-right-part {
+    width: 35%;
+  }
+}
+
+input.native-input.sc-ion-input-md {
+  color: red;
+}

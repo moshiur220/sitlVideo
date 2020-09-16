@@ -1,0 +1,142 @@
+<ion-content>
+  <span class="ellipse ellipse1"></span>
+  <span class="ellipse ellipse2"></span>
+  <span class="ellipse ellipse3"></span>
+  <span class="ellipse ellipse4"></span>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="7">
+        <!-- header inner -->
+        <div class="page-title">
+          <h3>Welcome Back</h3>
+        </div>
+        <!-- End of header inner -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- login info inner -->
+        <div class="login-info-inner">
+          <!-- login header -->
+          <div class="login-header">
+            <h3>Login</h3>
+            <p>Please Login to enter in a app.</p>
+          </div>
+          <!-- End of login header -->
+
+          <!-- login form inner -->
+          <div class="login-form-inner">
+            <form #login="ngForm" (ngSubmit)="loginUser(login)">
+              <ion-input
+                type="text"
+                class="theme-default-input"
+                placeholder="User Name"
+                name="email"
+                ngModel
+                required
+              ></ion-input>
+              <ion-input
+                type="password"
+                class="theme-default-input"
+                placeholder="Password"
+                name="password"
+                ngModel
+                required
+              ></ion-input>
+              <!-- aditional info -->
+              <div class="aditional-info">
+                <p>Forget password?</p>
+                <p class="signin-btn" [routerLink]="['/signup']">Sign in</p>
+              </div>
+              <button type="submit" class="submit-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  width="35"
+                  height="35"
+                  viewBox="0 0 35 35"
+                >
+                  <defs>
+                    <clipPath id="clip-path">
+                      <rect
+                        id="Rectangle_1"
+                        data-name="Rectangle 1"
+                        width="35"
+                        height="35"
+                        fill="#fff"
+                        stroke="#fff"
+                        stroke-width="1"
+                      />
+                    </clipPath>
+                  </defs>
+                  <g id="Go_" data-name="Go " clip-path="url(#clip-path)">
+                    <g
+                      id="arrow-forward-outline_1_"
+                      data-name="arrow-forward-outline (1)"
+                      transform="translate(1.965 3.229)"
+                    >
+                      <path
+                        id="Path_10222"
+                        data-name="Path 10222"
+                        d="M24.567,10.267,38.8,24.5,24.567,38.731"
+                        transform="translate(-7.962 -10.267)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                      <line
+                        id="Line_1"
+                        data-name="Line 1"
+                        x1="28.86"
+                        transform="translate(0 14.232)"
+                        fill="none"
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </button>
+              <!-- End of aditional info -->
+            </form>
+          </div>
+          <!-- End of login form inner -->
+        </div>
+        <!-- login info inner -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- app footer -->
+        <div class="app-footer">
+          <div class="footer-shap-inner">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              height="140.8"
+              viewBox="0 0 414 100.8"
+            >
+              <path
+                id="footer-shape"
+                d="M1155.746,497.28H1067.54c-16.988,0-32.343,8.76-40.12,22.45-8.99,15.81-27.181,26.63-48.151,26.63s-39.161-10.81-48.151-26.63c-7.777-13.69-23.143-22.45-40.12-22.45H802.792c-16.558,0-30.027-11.96-30.49-26.86h-.022v140.8h414V470.42h-.022C1185.772,485.32,1172.3,497.28,1155.746,497.28Z"
+                transform="translate(-772.28 -470.42)"
+                fill="#F76215"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- End add footer -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

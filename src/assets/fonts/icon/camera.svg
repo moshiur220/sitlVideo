@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_32" data-name="Rectangle 32" width="14" height="14" transform="translate(219 195)" fill="#f76215" stroke="#f76215" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Icon" transform="translate(-219 -195)" clip-path="url(#clip-path)">
+    <g id="camera-outline" transform="translate(218 194)">
+      <path id="Path_10273" data-name="Path 10273" d="M10.954,4.646l-.832-1.314A.9.9,0,0,0,9.438,3H6.563a.9.9,0,0,0-.685.332L5.046,4.646A.894.894,0,0,1,4.375,5H2.5a1,1,0,0,0-1,1v6a1,1,0,0,0,1,1h11a1,1,0,0,0,1-1V6a1,1,0,0,0-1-1H11.656A.955.955,0,0,1,10.954,4.646Z" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+      <circle id="Ellipse_3198" data-name="Ellipse 3198" cx="2.5" cy="2.5" r="2.5" transform="translate(5.5 6)" fill="none" stroke="#f76215" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="Path_10274" data-name="Path 10274" d="M3.875,4.938V4.25h-.75v.688" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

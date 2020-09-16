@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 22 22">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_14" data-name="Rectangle 14" width="22" height="22" transform="translate(-15346.5 369.5)" fill="#f76215"/>
+    </clipPath>
+  </defs>
+  <g id="Add_Person" data-name="Add Person" transform="translate(15346.5 -369.5)" clip-path="url(#clip-path)">
+    <g id="person-add-outline" transform="translate(-15346.245 370.49)">
+      <path id="Path_10250" data-name="Path 10250" d="M28.879,9.4c-.18,2.423-2.016,4.4-4.033,4.4s-3.856-1.976-4.033-4.4a4.048,4.048,0,1,1,8.065,0Z" transform="translate(-13.115 -4.999)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_10251" data-name="Path 10251" d="M18.8,31.662c-3.987,0-8.033,2.2-8.782,6.352a.769.769,0,0,0,.717.981h16.13a.77.77,0,0,0,.717-.981C26.83,33.862,22.783,31.662,18.8,31.662Z" transform="translate(-7.065 -19.93)" fill="none" stroke="#f76215" stroke-miterlimit="10" stroke-width="1.5"/>
+      <line id="Line_8" data-name="Line 8" y2="5.133" transform="translate(2.566 5.866)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_9" data-name="Line 9" x1="5.133" transform="translate(0 8.432)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

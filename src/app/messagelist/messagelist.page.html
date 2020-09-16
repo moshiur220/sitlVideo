@@ -1,0 +1,178 @@
+<ion-content [fullscreen]="true" class="dz-contact-search">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- Start App header -->
+        <div class="toolbar-header dz-contact-search">
+          <h5>Conversations</h5>
+          <p><span>154</span> members · <span>2,156</span> messages</p>
+          <div class="dz-search">
+            <ion-input
+              type="search"
+              placeholder="Search here..."
+              class="dz-search-field"
+            ></ion-input>
+            <button type="submit" [routerLink]="['/preloader']">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.9717 22.2C18.5162 22.2 22.2003 18.5159 22.2003 13.9714C22.2003 9.42692 18.5162 5.74286 13.9717 5.74286C9.42722 5.74286 5.74316 9.42692 5.74316 13.9714C5.74316 18.5159 9.42722 22.2 13.9717 22.2Z"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M24.257 24.2571L19.7827 19.7828"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- End of App header -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- Start Slider area  -->
+        <div class="dz-cont-slider">
+          <div class="dz-slider-title dz-flex-style">
+            <h3>active now</h3>
+            <button>
+              Full list
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.57141 14.2857L12.8571 9.99999L8.57141 5.71428"
+                  stroke="#FF9500"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Start slider  -->
+          <div class="dz-slider-part">
+            <ion-slides pager="true" [options]="slideOpts">
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/fp.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Fernando</h4>
+                </div>
+              </ion-slide>
+
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/th.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Toby</h4>
+                </div>
+              </ion-slide>
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/fp.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Fernando</h4>
+                </div>
+              </ion-slide>
+
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/ep.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Edward</h4>
+                </div>
+              </ion-slide>
+
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/lv.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Louie</h4>
+                </div>
+              </ion-slide>
+              <ion-slide [routerLink]="['/conversation']">
+                <div class="dz-item dz-active">
+                  <button class="dz-image">
+                    <img src="assets/images/jg.png" class="dz-fig" alt="" />
+                  </button>
+                  <h4>Jeanette</h4>
+                </div>
+              </ion-slide>
+            </ion-slides>
+          </div>
+          <!-- End of Slider -->
+        </div>
+        <!-- Start Slider area  -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="dz-chats">
+          <ul class="dz-chat-list">
+            <li
+              class="dz-active"
+              [routerLink]="['/conversation']"
+              *ngFor="let user of displayUser"
+            >
+              <div class="dz-chat-img">
+                <img src="assets/images/fp.png" class="dz-fig" alt="" />
+              </div>
+              <div class="dz-chat-text">
+                <h3>{{user.userName}}</h3>
+                <p class="uniqenail">{{user.email}}</p>
+              </div>
+              <div class="dz-chat-time">
+                <p>Sun</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="dz-add-chat">
+          <button>
+            <svg
+              width="36"
+              height="36"
+              viewBox="0 0 36 36"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M28.1306 16.5592H19.4408V7.86939C19.4408 7.07695 18.7925 6.42859 18 6.42859C17.2076 6.42859 16.5592 7.07695 16.5592 7.86939V16.5592H7.86939C7.07695 16.5592 6.42859 17.2076 6.42859 18C6.42859 18.3962 6.59068 18.7564 6.85182 19.0176C7.11297 19.2787 7.47317 19.4408 7.86939 19.4408H16.5592V28.1306C16.5592 28.5269 16.7213 28.8871 16.9825 29.1482C17.2436 29.4094 17.6038 29.5714 18 29.5714C18.7925 29.5714 19.4408 28.9231 19.4408 28.1306V19.4408H28.1306C28.9231 19.4408 29.5714 18.7925 29.5714 18C29.5714 17.2076 28.9231 16.5592 28.1306 16.5592Z"
+                fill="#F7F7FA"
+              />
+            </svg>
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

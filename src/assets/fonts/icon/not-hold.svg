@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_29" data-name="Rectangle 29" width="24" height="24" transform="translate(-15346.688 520.312)" fill="#f76215"/>
+    </clipPath>
+  </defs>
+  <g id="Not_Hold" data-name="Not Hold" transform="translate(15346.688 -520.312)" clip-path="url(#clip-path)">
+    <g id="phone-missed" transform="translate(-15345.923 521.492)">
+      <line id="Line_16" data-name="Line 16" x1="6.329" y2="6.329" transform="translate(15.704 0)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <line id="Line_17" data-name="Line 17" x2="6.329" y2="6.329" transform="translate(15.704 0)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <path id="Path_10269" data-name="Path 10269" d="M25.5,20.021v3.164a2.11,2.11,0,0,1-2.3,2.11,20.875,20.875,0,0,1-9.1-3.238A20.569,20.569,0,0,1,7.77,15.728,20.875,20.875,0,0,1,4.532,6.583a2.11,2.11,0,0,1,2.1-2.3H9.8A2.11,2.11,0,0,1,11.9,6.1a13.544,13.544,0,0,0,.738,2.964,2.11,2.11,0,0,1-.475,2.226l-1.34,1.34a16.877,16.877,0,0,0,6.329,6.329l1.34-1.34a2.11,2.11,0,0,1,2.226-.475,13.544,13.544,0,0,0,2.964.738A2.11,2.11,0,0,1,25.5,20.021Z" transform="translate(-4.523 -3.229)" fill="none" stroke="#f76215" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>
