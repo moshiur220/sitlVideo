@@ -15,33 +15,23 @@ export class MessagelistPage implements OnInit {
   };
 
   displayUser: any;
-  constructor(private userList: NewUserService, private socket: Socket) {
-    // this.userList.getAllUser().subscribe((user) => {
-    //   this.displayUser = user;
-    //   console.log(user);
-    // });
-  }
+  constructor(private userList: NewUserService, private socket: Socket) {}
   ngOnInit() {
     let user = this.userList.returnUser()["userData"][0];
     //
-    console.log(user);
-    // userName: "hello ionic", mobile: "234555", email: "ionic@gmail.com"
+    // Sample chat options
     this.socket.on("chat message", (data) => {
       console.log(data);
     });
-
+    // When connect new user in socket
     this.socket.emit("a new user", {
       userName: user.userName,
       email: user.email,
       userImage: user.userImage,
     });
-
+    // whent disconnect and connect user in socket
     this.socket.on("show user", (data) => {
-      console.log(data);
       this.displayUser = data;
-      // this.displayUser.map((us) => {
-      //   console.log(us);
-      // });
     });
   }
 }

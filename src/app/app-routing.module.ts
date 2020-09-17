@@ -1,54 +1,79 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: "home",
+    loadChildren: () =>
+      import("./home/home.module").then((m) => m.HomePageModule),
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full",
   },
   {
-    path: 'conversation',
-    loadChildren: () => import('./conversation/conversation.module').then( m => m.ConversationPageModule)
+    path: "conversation",
+    loadChildren: () =>
+      import("./conversation/conversation.module").then(
+        (m) => m.ConversationPageModule
+      ),
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    path: "conversation/:email/:userId",
+    loadChildren: () =>
+      import("./conversation/conversation.module").then(
+        (m) => m.ConversationPageModule
+      ),
   },
   {
-    path: 'signup',
-    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+    path: "login",
+    loadChildren: () =>
+      import("./login/login.module").then((m) => m.LoginPageModule),
   },
   {
-    path: 'audiocall',
-    loadChildren: () => import('./audiocall/audiocall.module').then( m => m.AudiocallPageModule)
+    path: "signup",
+    loadChildren: () =>
+      import("./signup/signup.module").then((m) => m.SignupPageModule),
   },
   {
-    path: 'groupcall',
-    loadChildren: () => import('./groupcall/groupcall.module').then( m => m.GroupcallPageModule)
+    path: "audiocall",
+    loadChildren: () =>
+      import("./audiocall/audiocall.module").then((m) => m.AudiocallPageModule),
   },
   {
-    path: 'videocall',
-    loadChildren: () => import('./videocall/videocall.module').then( m => m.VideocallPageModule)
+    path: "audiocall/:email/:userName/:ring",
+    loadChildren: () =>
+      import("./audiocall/audiocall.module").then((m) => m.AudiocallPageModule),
   },
   {
-    path: 'myprofile',
-    loadChildren: () => import('./myprofile/myprofile.module').then( m => m.MyprofilePageModule)
+    path: "groupcall",
+    loadChildren: () =>
+      import("./groupcall/groupcall.module").then((m) => m.GroupcallPageModule),
   },
   {
-    path: 'messagelist',
-    loadChildren: () => import('./messagelist/messagelist.module').then( m => m.MessagelistPageModule)
-  }
+    path: "videocall",
+    loadChildren: () =>
+      import("./videocall/videocall.module").then((m) => m.VideocallPageModule),
+  },
+  {
+    path: "myprofile",
+    loadChildren: () =>
+      import("./myprofile/myprofile.module").then((m) => m.MyprofilePageModule),
+  },
+  {
+    path: "messagelist",
+    loadChildren: () =>
+      import("./messagelist/messagelist.module").then(
+        (m) => m.MessagelistPageModule
+      ),
+  },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

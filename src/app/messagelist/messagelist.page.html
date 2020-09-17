@@ -138,20 +138,21 @@
       <ion-col>
         <div class="dz-chats">
           <ul class="dz-chat-list">
-            <li
-              class="dz-active"
-              [routerLink]="['/conversation']"
-              *ngFor="let user of displayUser"
-            >
-              <div class="dz-chat-img">
-                <img src="assets/images/fp.png" class="dz-fig" alt="" />
-              </div>
-              <div class="dz-chat-text">
-                <h3>{{user.userName}}</h3>
-                <p class="uniqenail">{{user.email}}</p>
-              </div>
-              <div class="dz-chat-time">
-                <p>Sun</p>
+            <li *ngFor="let user of displayUser">
+              <div
+                [class.dz-active]="user.status"
+                [routerLink]="['/conversation',user.email,user.userName]"
+              >
+                <div class="dz-chat-img">
+                  <img src="assets/images/fp.png" class="dz-fig" alt="" />
+                </div>
+                <div class="dz-chat-text">
+                  <h3>{{user.userName}}</h3>
+                  <p class="uniqenail">{{user.email}}</p>
+                </div>
+                <div class="dz-chat-time">
+                  <p>Sun</p>
+                </div>
               </div>
             </li>
           </ul>

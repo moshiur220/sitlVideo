@@ -49,7 +49,16 @@ function currentStatus(user, id) {
     ]); // Call callBack
   });
 }
-// socket connections
+//********************* Fiend socket id **************************************
+
+function privateSocketId(newuserArr, email) {
+  return new Promise((resolve, reject) => {
+    resolve(newuserArr.filter((user) => user.email === email)); // Call callBack
+  });
+}
+
+//********************* socket connections **************************************
+//******************************************************************************
 io.on("connection", (socket) => {
   console.log("a user connected");
   // a new user connect event
@@ -67,7 +76,37 @@ io.on("connection", (socket) => {
   });
   console.log(socket.id);
   socket.emit("chat message", "This is test message");
-  /// disconnect user
+
+  //********************* */ this is message aria *********************************
+  //********************* */ this event for private chat message aria *************
+  socket.on("private_message", async (data) => {
+    console.log(data);
+    let user = await privateSocketId(userArr, data.sentUse);
+    // sending to individual socketid (private message)
+    socket.to(user[0].userId).emit("private_message_dispaly", [
+      {
+        receiveUser: data.sentUse,
+        message: data.message,
+        userImage: user[0].userImage,
+        position: data.position,
+      },
+    ]);
+    console.log(user);
+  });
+
+  //********************* */ this is audio call aria *********************************
+  //********************* */ this event for private audion call aria *************
+
+  socket.on("userAudioCall", async (data) => {
+    let user = await privateSocketId(userArr, data.callUser);
+    io.to(user[0].userId).emit("go_audio_call", {
+      fromAudioCall: data.curentUserEmail,
+      callUserName: data.currentUser,
+      receveUser: "receveUser",
+    });
+  });
+
+  ///*************************** */ disconnect user *******************************
   socket.on("disconnect", async () => {
     let user = await changeStatus(userArr, socket.id);
     userArr = await removeUser(user[0].email);

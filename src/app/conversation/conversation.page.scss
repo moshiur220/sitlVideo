@@ -1,29 +1,39 @@
 .conversation-person .dz-msg-img {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-right: 10px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
 }
 
 .conversation-person {
-    display: inline-flex;
-    align-items: center;
+  display: inline-flex;
+  align-items: center;
 }
 
-ion-content{
-    --ion-background-color:#f7f7f7;
+ion-content {
+  --ion-background-color: #f7f7f7;
 }
-.native-input{
-    padding-left: 15px;
+.native-input {
+  padding-left: 15px;
 }
 @media only screen and (min-width: 575px) {
-    .footer-shap-inner svg{
-        display: none;
-    }
-    .footer-shap-inner {
-        height: 86px;
-        background: var(--themecolor);
-    }
+  .footer-shap-inner svg {
+    display: none;
+  }
+  .footer-shap-inner {
+    height: 86px;
+    background: var(--themecolor);
+  }
+}
+
+textarea {
+  color: orange;
+}
+.dz-live-chat .dz-left-msg p {
+  margin-left: 35px;
+  background: var(--white);
+  box-shadow: 0 2px 2px 0 hsla(240, 17%, 24%, 0.1);
+  color: black;
 }

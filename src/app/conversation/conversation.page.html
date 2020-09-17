@@ -8,99 +8,105 @@
       <!-- start conversation person  -->
       <div class="conversation-person">
         <!-- person image -->
-    
-        <div class="dz-msg-img" [routerLink]="['/myprofile']" >
-          <img src="assets/images/ep.png" alt="">
+
+        <div class="dz-msg-img" [routerLink]="['/myprofile']">
+          <img src="assets/images/ep.png" alt="" />
         </div>
         <!-- person image -->
 
         <!-- preson name -->
-        <span [routerLink]="['/myprofile']">Edward</span>
+        <span [routerLink]="['/myprofile']">{{userSocket}}</span>
         <!-- preson name -->
       </div>
       <!-- start conversation person  -->
     </ion-title>
-   
 
-
-      <ion-buttons slot="end" style="font-size: 25px; color: var(--themecolor); margin-right: 20px;">
-        <ion-icon  name="call" style="margin-right: 10px;" [routerLink]="['/audiocall']"></ion-icon>
-        <ion-icon  name="videocam"  [routerLink]="['/videocall']"></ion-icon>
-        <!-- <ion-icon slot="primary" name="add"></ion-icon> -->
-      </ion-buttons>
+    <ion-buttons
+      slot="end"
+      style="font-size: 25px; color: var(--themecolor); margin-right: 20px"
+    >
+      <ion-icon
+        name="call"
+        style="margin-right: 10px"
+        [routerLink]="['/audiocall',chatUserEmail,userSocket,'callUser']"
+      ></ion-icon>
+      <ion-icon name="videocam" [routerLink]="['/videocall']"></ion-icon>
+      <!-- <ion-icon slot="primary" name="add"></ion-icon> -->
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 
 <ion-content>
   <ion-grid>
     <ion-row>
-        <ion-col>
+      <ion-col>
+        <div class="dz-msg-time">
+          <p>TUE · 14:48 PM</p>
+        </div>
 
-            <div class="dz-msg-time">
-                <p>TUE · 14:48 PM</p>
-            </div>
+        <div class="dz-live-chat">
+          <span *ngFor="let message of displayMessage">
+            <span *ngIf="message.position ==='right'">
+              <div class="dz-live-msg dz-right-msg dz-clear">
+                <p>{{message.message}}</p>
+              </div>
+            </span>
+            <span *ngIf="message.position ==='left'">
+              <div class="dz-live-msg dz-left-msg dz-clear">
+                <div class="dz-live-img">
+                  <img src="assets/images/ep.png" alt="" />
+                </div>
+                <p>{{message.message}}</p>
+              </div>
+            </span>
+          </span>
+        </div>
 
-            <div class="dz-live-chat">
-                <div class="dz-live-msg dz-right-msg dz-clear">
-                  
-                    <p>How to use iOS toolkit properly?</p>
-                    <p>especially for teams 👨👨👨👨</p>
-                </div>
-                <div class="dz-live-msg dz-left-msg dz-clear">
-                    <div class="dz-live-img">
-                        <img src="assets/images/ep.png" alt="">
-                    </div>
-                    <p>Hey there! First, thanks for asking. May I know how many designers?</p>
-                </div>
-                <div class="dz-live-msg dz-right-msg dz-clear">
-                    <p>100500 designers!</p>
-                </div>
-                <div class="dz-live-msg dz-left-msg dz-clear">
-                    <div class="dz-live-img">
-                        <img src="assets/images/ep.png" alt="">
-                    </div>
-                    <p>Oh, cool 👍👍</p>
-                    <p>You can simply import the FIG file into your workflow and publish it after</p>
-                    <p>And now your app development process boosts x4 times</p>
-                </div>
-                <div class="dz-live-msg dz-right-msg dz-clear">
-                    <p>Thanks, bro. Gone for buying 😘</p>
-                </div>
-            </div>
-            <div class="dz-msg-text dz-flex-style">
-                <ul class="dz-msg-option dz-flex-style">
-                    <li>
-                        <button>
-                          <ion-icon name="add-circle-outline" style="font-size: 20px;"></ion-icon>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                          <ion-icon name="camera-outline" style="font-size: 20px;"></ion-icon>
-                        </button>
-                    </li>
-                    <!-- <li>
-                        <button>
-                          <ion-icon name="image-outline" style="font-size: 20px;"></ion-icon>
-                        </button>
-                    </li>
-                    <li>
-                        <button class="dz-mic">
-                          <ion-icon name="mic-outline" style="font-size: 20px;"></ion-icon>
-                        </button>
-                    </li> -->
-                </ul>
-                <div class="dz-type-msg">
-                    <textarea type="text" placeholder="message..." class="dz-text-field"></textarea>
-                    <button class="dz-type-icon">
-                        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M14 2.625C7.71641 2.625 2.625 7.71641 2.625 14C2.625 20.2836 7.71641 25.375 14 25.375C20.2836 25.375 25.375 20.2836 25.375 14C25.375 7.71641 20.2836 2.625 14 2.625ZM17.9375 10.9375C18.6648 10.9375 19.25 11.5227 19.25 12.25C19.25 12.9773 18.6648 13.5625 17.9375 13.5625C17.2102 13.5625 16.625 12.9773 16.625 12.25C16.625 11.5227 17.2102 10.9375 17.9375 10.9375ZM10.0625 10.9375C10.7898 10.9375 11.375 11.5227 11.375 12.25C11.375 12.9773 10.7898 13.5625 10.0625 13.5625C9.33516 13.5625 8.75 12.9773 8.75 12.25C8.75 11.5227 9.33516 10.9375 10.0625 10.9375ZM14 20.1797C11.5555 20.1797 9.49922 18.5445 8.84844 16.3133C8.76641 16.0344 8.97422 15.75 9.26953 15.75H18.725C19.0148 15.75 19.2281 16.0289 19.1461 16.3133C18.5008 18.5445 16.4445 20.1797 14 20.1797Z" fill="var(--themecolor)" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </ion-col>
+        <div class="dz-msg-text dz-flex-style">
+          <ul class="dz-msg-option dz-flex-style">
+            <li>
+              <button>
+                <ion-icon
+                  name="add-circle-outline"
+                  style="font-size: 20px"
+                  (click)="playAudio()"
+                ></ion-icon>
+              </button>
+            </li>
+            <li>
+              <button>
+                <ion-icon
+                  name="camera-outline"
+                  style="font-size: 20px"
+                  (click)="userMessageEvent()"
+                ></ion-icon>
+              </button>
+            </li>
+          </ul>
+          <div class="dz-type-msg">
+            <textarea
+              [(ngModel)]="userMessage"
+              type="text"
+              placeholder="message..."
+              class="dz-text-field"
+            ></textarea>
+            <button class="dz-type-icon">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14 2.625C7.71641 2.625 2.625 7.71641 2.625 14C2.625 20.2836 7.71641 25.375 14 25.375C20.2836 25.375 25.375 20.2836 25.375 14C25.375 7.71641 20.2836 2.625 14 2.625ZM17.9375 10.9375C18.6648 10.9375 19.25 11.5227 19.25 12.25C19.25 12.9773 18.6648 13.5625 17.9375 13.5625C17.2102 13.5625 16.625 12.9773 16.625 12.25C16.625 11.5227 17.2102 10.9375 17.9375 10.9375ZM10.0625 10.9375C10.7898 10.9375 11.375 11.5227 11.375 12.25C11.375 12.9773 10.7898 13.5625 10.0625 13.5625C9.33516 13.5625 8.75 12.9773 8.75 12.25C8.75 11.5227 9.33516 10.9375 10.0625 10.9375ZM14 20.1797C11.5555 20.1797 9.49922 18.5445 8.84844 16.3133C8.76641 16.0344 8.97422 15.75 9.26953 15.75H18.725C19.0148 15.75 19.2281 16.0289 19.1461 16.3133C18.5008 18.5445 16.4445 20.1797 14 20.1797Z"
+                  fill="var(--themecolor)"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </ion-col>
     </ion-row>
-</ion-grid>
+  </ion-grid>
 </ion-content>
