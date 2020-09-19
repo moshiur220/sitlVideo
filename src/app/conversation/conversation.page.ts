@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { Socket } from "ngx-socket-io";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NewUserService } from "../api/new-user.service";
+import { MysocketService } from "../api/mysocket.service";
+
 @Component({
   selector: "app-conversation",
   templateUrl: "./conversation.page.html",
@@ -24,11 +26,12 @@ export class ConversationPage implements OnInit {
     private socket: Socket,
     private route: ActivatedRoute,
     private userList: NewUserService,
-    private router: Router
+    private router: Router,
+    private sService: MysocketService
   ) {
     this.route.paramMap.subscribe((param) => {
-      console.log(param.get("email"));
-      console.log(param.get("userId"));
+      // console.log(param.get("email"));
+      // console.log(param.get("userId"));
       this.chatUserEmail = param.get("email");
       this.userSocket = param.get("userId");
     });
@@ -76,6 +79,16 @@ export class ConversationPage implements OnInit {
     audio.load();
     audio.play();
   }
+
+  //********************* make a call ****************************************
+  makeCall() {
+    // this.sService.callStatus(true, false);
+    this.sService.callAudio = true;
+
+    this.router.navigateByUrl(
+      `audiocall/${this.chatUserEmail}/${this.userSocket}`
+    );
+  }
   ngOnInit() {
     this.socket.on("private_message_dispaly", (data) => {
       console.log(data);
@@ -92,10 +105,13 @@ export class ConversationPage implements OnInit {
       this.receiveSound();
     });
     // audio call for go
+
     this.socket.on("go_audio_call", (data) => {
       this.router.navigateByUrl(
-        `audiocall/${data.fromAudioCall}/${data.callUserName}/${data.receveUser}`
+        `audiocall/${data.fromAudioCall}/${data.callUserName}`
       );
     });
+
+    // function make a call
   }
 }

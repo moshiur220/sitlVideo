@@ -39,7 +39,11 @@
                 "input": "src/global.scss"
               }
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "src/app/sitlvendor/external_api.js"
+              }
+            ]
           },
           "configurations": {
             "production": {

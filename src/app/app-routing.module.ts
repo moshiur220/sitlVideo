@@ -42,7 +42,7 @@ const routes: Routes = [
       import("./audiocall/audiocall.module").then((m) => m.AudiocallPageModule),
   },
   {
-    path: "audiocall/:email/:userName/:ring",
+    path: "audiocall/:email/:userName",
     loadChildren: () =>
       import("./audiocall/audiocall.module").then((m) => m.AudiocallPageModule),
   },
@@ -53,6 +53,11 @@ const routes: Routes = [
   },
   {
     path: "videocall",
+    loadChildren: () =>
+      import("./videocall/videocall.module").then((m) => m.VideocallPageModule),
+  },
+  {
+    path: "videocall/:callId",
     loadChildren: () =>
       import("./videocall/videocall.module").then((m) => m.VideocallPageModule),
   },

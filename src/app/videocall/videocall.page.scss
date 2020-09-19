@@ -1,275 +1,277 @@
 .footer-shap-inner {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 135px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 135px;
 }
 
 .call-navigation {
-    position: relative;
-    z-index: 10;
+  position: relative;
+  z-index: 10;
 }
 .nav-btn i {
-    color: #fff;
-    font-size: 20px;
+  color: #fff;
+  font-size: 20px;
 }
 
 .call-navigation {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-bottom: 15px;
 }
 
 button.nav-btn {
-    background: #E64F00;
-    height: 50px;
-    width: 50px;
-    text-align: center;
-    border-radius: 50%;
-    margin: 0 10px;
+  background: #e64f00;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 10px;
 }
 
 .app-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 
 .call-view .back-button {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
 .call-view .back-button .back-btn {
-    height: 40px;
-    width: 40px;
-    border: 1px solid var(--themecolor);
-    border-radius: 4px;
-    background: rgba(255,255,255, .5);
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--themecolor);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .call-receiver-info {
-    position: absolute;
-    left: 50%;
-    bottom: 200px;
-    text-align: center;
-    transform: translate(-50%);
+  position: absolute;
+  left: 50%;
+  bottom: 200px;
+  text-align: center;
+  transform: translate(-50%);
 }
 
 .call-receiver-info h3 {
-    font-size: 30px;
-    color: var(--white);
-    font-weight: 500;
-    margin-bottom: 4px;
+  font-size: 30px;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 4px;
 }
 
 .call-receiver-info p {
-    color: var(--white);
-    font-weight: 400;
-    font-size: 16px;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .call-audio-video-button {
-    position: absolute;
-    width: 100%;
-    bottom: 14%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  bottom: 14%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
 }
 
 .call-audio-video-button .call-audio-video-btn {
-    height: 55px;
-    width: 55px;
-    background: #fff;
-    border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  background: #fff;
+  border-radius: 50%;
 }
 
 .call-receiver-cancel {
-    height: 70px;
-    width: 70px;
-    background: #21C927;
-    border-radius: 50%;
-    box-shadow: 0 3px 6px rgba(0,0,0);
+  height: 70px;
+  width: 70px;
+  background: #21c927;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0);
 }
 
 .call-duration {
-    border: 1px solid #707070;
-    padding: 10px;
-    display: block;
-    margin-top: 15px;
-    background: rgba(4, 4, 4, .6);
-    border-radius: 20px;
-    color: var(--white);
-    font-size: 16px;
-    margin-left: 20px;
-    margin-right: 20px;
-    position: relative;
+  border: 1px solid #707070;
+  padding: 10px;
+  display: block;
+  margin-top: 15px;
+  background: rgba(4, 4, 4, 0.6);
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
 }
 
 .call-duration:after {
-    height: 6px;
-    width: 6px;
-    left: 17px;
-    top: 50%;
-    transform: translateY(-50%);
-    position: absolute;
-    content:
-    "";
-    background: #DB0000;
-    border-radius: 50%;
+  height: 6px;
+  width: 6px;
+  left: 17px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  content: "";
+  background: #db0000;
+  border-radius: 50%;
 }
 
 /* group call */
 .call-view {
-    // height: 100vh;
+  // height: 100vh;
 }
 .call-view.group-call {
-    background: #3A3A3A;
+  background: #3a3a3a;
 }
 .group-conversation-image .particepent {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 1px solid #fff;
-    box-shadow: 0px 2px 9px rgba(0,0,0,.5);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #fff;
+  box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.5);
 }
 
 .group-conversation-image {
-    display: flex;    
-    margin-bottom: 35px;
+  display: flex;
+  margin-bottom: 35px;
 }
 .particepent-inner .mic {
-    height: 35px;
-    width: 35px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 35px;
-    color: #fff;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
 }
 
 .particepent-inner {
-    position: relative;
+  position: relative;
 }
 
 .particepent-inner .mic.active {
-    background: #19CB66;
+  background: #19cb66;
 }
 
 .particepent-inner .mic.mute {
-    background: #FF2E2E;
+  background: #ff2e2e;
 }
 
 /* video call */
 .call-receiver-info.video-call {
-    text-align: left;
-    left: 20px;
-    transform: none;
+  text-align: left;
+  left: 20px;
+  transform: none;
 }
 
 .video-call .call-duration {
-    margin-left: 0;
-    margin-right: 54px;
-    text-align: center;
+  margin-left: 0;
+  margin-right: 54px;
+  text-align: center;
 }
 
 .call-particepent-image {
-    height: 130px;
-    width: 90px;
-    overflow: hidden;
-    border-radius: 8px;
-    border: 1px solid var(--white);
+  height: 130px;
+  width: 90px;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--white);
 }
 
 .call-particepent {
-    position: absolute;
-    right: 30px;
-    top: 30px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
 }
 
 .call-particepent .call-particepent-switch {
-    height: 24px;
-    width: 24px;
-    line-height: 24px;
-    text-align: center;
-    background: var(--white);
-    border: 1px solid #FFD595;
-    border-radius: 4px;
-    position: absolute;
-    top: -12px;
-    right: -12px;
+  height: 24px;
+  width: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid #ffd595;
+  border-radius: 4px;
+  position: absolute;
+  top: -12px;
+  right: -12px;
 }
 
-.video-call.call-audio-video-button{
-    position: absolute;
-    width: inherit;
-    display: block;
-    padding: 0 20px;
-    right: 0;
-    bottom: 94px;
+.video-call.call-audio-video-button {
+  position: absolute;
+  width: inherit;
+  display: block;
+  padding: 0 20px;
+  right: 0;
+  bottom: 94px;
 }
 
 .video-call.call-audio-video-button .call-audio-video-btn {
-    background: var(--white);
+  background: var(--white);
 
-    display: block;
-    margin-bottom: 15px;
-    text-align: center;
+  display: block;
+  margin-bottom: 15px;
+  text-align: center;
 }
 .call-audio-video-button-receive {
-    position: absolute;
-    z-index: 11;
-    bottom: 90px;
-    left: 50%;
-    transform: translate(-50%);
+  position: absolute;
+  z-index: 11;
+  bottom: 90px;
+  left: 50%;
+  transform: translate(-50%);
 }
 .call-audio-video-button-receive .call-receiver-cancel {
-    height: 70px;
-    width: 70px;
-    background: #21C927;
-    border-radius: 50%;
-    box-shadow: 0 3px 6px black;
+  height: 70px;
+  width: 70px;
+  background: #21c927;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px black;
 }
 .call-view img {
-    width: 100%;
+  width: 100%;
 }
 .call-view {
-    height: 100%;
+  height: 100%;
 }
 .caller-video iframe {
-    height: calc(100vh - 80px);
+  height: calc(100vh - 80px);
 }
 
-.call-view.group-call{
-    height: 100%;
+.call-view.group-call {
+  height: 100%;
 }
 
 @media only screen and (min-width: 575px) {
-    .footer-shap-inner svg{
-        display: none;
-    }
-    .footer-shap-inner {
-        height: 86px;
-        background: var(--themecolor);
-    }
+  .footer-shap-inner svg {
+    display: none;
+  }
+  .footer-shap-inner {
+    height: 86px;
+    background: var(--themecolor);
+  }
 }
 
-@media only screen and (min-width: 391px)  and (max-width: 450px){
-
+@media only screen and (min-width: 391px) and (max-width: 450px) {
 }
-@media only screen and (min-width: 321px)  and (max-width: 390px){
-
+@media only screen and (min-width: 321px) and (max-width: 390px) {
 }
 @media only screen and (max-width: 320px) {
-    button.nav-btn{
-        background: #E64F00;
-        height: 40px;
-        width: 40px;
-    }
+  button.nav-btn {
+    background: #e64f00;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.wrapper {
+  width: 100% !important;
+  height: 100% !important;
 }

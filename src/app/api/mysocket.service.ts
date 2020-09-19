@@ -5,4 +5,12 @@ import { Injectable } from "@angular/core";
 })
 export class MysocketService {
   constructor() {}
+
+  callAudio = false;
+  callVideo = true;
+  callarId = "";
+
+  // callStatus(audio = false, video = false) {
+  //   return { audio, video };
+  // }
 }

@@ -28,8 +28,9 @@
       <ion-icon
         name="call"
         style="margin-right: 10px"
-        [routerLink]="['/audiocall',chatUserEmail,userSocket,'callUser']"
+        (click)="makeCall()"
       ></ion-icon>
+      <!-- [routerLink]="['/audiocall',chatUserEmail,userSocket]" -->
       <ion-icon name="videocam" [routerLink]="['/videocall']"></ion-icon>
       <!-- <ion-icon slot="primary" name="add"></ion-icon> -->
     </ion-buttons>
