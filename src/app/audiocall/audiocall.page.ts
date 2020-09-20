@@ -4,6 +4,7 @@ import { NewUserService } from "../api/new-user.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { MysocketService } from "../api/mysocket.service";
 import { v4 as uuidv4 } from "uuid";
+
 @Component({
   selector: "app-audiocall",
   templateUrl: "./audiocall.page.html",
@@ -63,7 +64,8 @@ export class AudiocallPage implements OnInit {
     this.socket.on("receive_all_call", (data) => {
       // this.router.navigate(["/messagelist"]);
       //console.log("working....");
-      this.router.navigateByUrl(`videocall/${data.callarId}`);
+      // this.router.navigateByUrl(`videocall/${data.callarId}`);
+      window.location.href = `videocall/${this.callarId}`;
     });
 
     // this.playAudio();
@@ -71,9 +73,9 @@ export class AudiocallPage implements OnInit {
 
     if (this.sService.callAudio) {
       this.callReciveStatus = "Calling...";
-      //this.callPlayAudio();
+      this.callPlayAudio();
     } else {
-      //this.receivePlayAudio();
+      this.receivePlayAudio();
       this.callReciveStatus = "Receive...";
     }
 
@@ -96,7 +98,8 @@ export class AudiocallPage implements OnInit {
         callarId: this.callarId,
       });
       // this.router.navigate(["/videocall"]);
-      this.router.navigateByUrl(`videocall/${this.callarId}`);
+      // this.router.navigateByUrl(`videocall/${this.callarId}`);
+      window.location.href = `videocall/${this.callarId}`;
     }
   }
 

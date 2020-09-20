@@ -29,5 +29,8 @@ export class LoginPage implements OnInit {
       }
     });
   }
+
+  // test function
+
   ngOnInit() {}
 }

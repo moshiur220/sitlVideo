@@ -7,12 +7,6 @@
           <div class="call-view">
             <!-- video call particepent -->
             <div class="call-particepent">
-              <button class="call-particepent-switch">
-                <ion-icon
-                  name="trending-up-outline"
-                  style="color: #f76215; font-size: 16px"
-                ></ion-icon>
-              </button>
             </div>
             <!-- video call particepent -->
 
@@ -23,48 +17,6 @@
             <!-- video call video -->
 
             <!-- back button -->
-            <div class="back-button" [routerLink]="['/conversation']">
-              <button class="back-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                >
-                  <defs>
-                    <clipPath id="clip-path">
-                      <rect
-                        id="Rectangle_18"
-                        data-name="Rectangle 18"
-                        width="18"
-                        height="18"
-                        transform="translate(38.853 38.853)"
-                        fill="#f76215"
-                        stroke="#f76215"
-                        stroke-width="1"
-                      />
-                    </clipPath>
-                  </defs>
-                  <g
-                    id="Back"
-                    transform="translate(-38.853 -38.853)"
-                    clip-path="url(#clip-path)"
-                  >
-                    <path
-                      id="chevron-back-outline"
-                      d="M18.539,6.924l-7.164,7.164,7.164,7.164"
-                      transform="translate(32.649 33.765)"
-                      fill="none"
-                      stroke="#f76215"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    />
-                  </g>
-                </svg>
-              </button>
-            </div>
             <!-- back button -->
           </div>
           <!-- calling part -->
@@ -79,11 +31,11 @@
     <ion-row>
       <ion-col size="12">
         <!-- call receiver information -->
-        <div class="call-receiver-info video-call">
+        <!-- <div class="call-receiver-info video-call">
           <h3>Azim Seraji</h3>
           <p>Calling...</p>
           <span class="call-duration">25:18</span>
-        </div>
+        </div> -->
         <!-- End of call receiver information -->
 
         <!-- call audio video button -->
@@ -111,7 +63,7 @@
         </div>
         <!-- End of call audio video button -->
 
-        <div class="call-audio-video-button-receive video-call">
+        <div class="call-audio-video-button-receive video-call" (click)="hangup()">
           <button class="call-receiver-cancel">
             <ion-icon
               name="call"
