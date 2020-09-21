@@ -1,21 +1,30 @@
-<ion-content>
+<ion-content class="main-screen">
   <div class="wrapper">
     <ion-grid>
       <ion-row>
         <ion-col size="12">
+          <!-- group conversation image  -->
+          <div class="caller-information">
+            <div class="group-conversation-image">
+              <div class="particepent-inner" style="z-index: 10">
+                <div class="particepent">
+                  <img src="assets/images/group1.jpg" alt="" />
+                </div>
+                <button class="mic active">
+                  <ion-icon
+                    name="volume-high-outline"
+                    style="color: #fff; font-size: 18px"
+                  ></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- group conversation image  -->
           <!-- calling part -->
           <div class="call-view">
             <!-- video call particepent -->
-            <div class="call-particepent">
-            </div>
-            <!-- video call particepent -->
-
-            <!-- video call video -->
-            <div class="caller-video">
-              <!-- <iframe width="100%" height="100vh" src="http://www.youtube.com/embed/n_dZNLr2cME?rel=0&hd=1" frameborder="0" allowfullscreen></iframe> -->
-            </div>
-            <!-- video call video -->
-
+            <div class="call-particepent"></div>
             <!-- back button -->
             <!-- back button -->
           </div>
@@ -31,15 +40,18 @@
     <ion-row>
       <ion-col size="12">
         <!-- call receiver information -->
-        <!-- <div class="call-receiver-info video-call">
-          <h3>Azim Seraji</h3>
+        <div class="call-receiver-info video-call" *ngIf="! callReceiveStatus">
+          <h3>{{callerUser | titlecase}}</h3>
           <p>Calling...</p>
-          <span class="call-duration">25:18</span>
-        </div> -->
+        </div>
         <!-- End of call receiver information -->
 
         <!-- call audio video button -->
-        <div class="call-audio-video-button video-call">
+
+        <div
+          class="call-audio-video-button video-call"
+          *ngIf="callReceiveStatus"
+        >
           <button class="call-audio-video-btn video-btn">
             <ion-icon
               name="videocam-outline"
@@ -63,7 +75,10 @@
         </div>
         <!-- End of call audio video button -->
 
-        <div class="call-audio-video-button-receive video-call" (click)="hangup()">
+        <div
+          class="call-audio-video-button-receive video-call"
+          (click)="hangup()"
+        >
           <button class="call-receiver-cancel">
             <ion-icon
               name="call"
@@ -77,7 +92,7 @@
 
   <ion-grid fixed>
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" *ngIf="callReceiveStatus">
         <!-- app footer -->
         <div class="app-footer">
           <div class="footer-shap-inner">

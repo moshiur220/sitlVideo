@@ -3,9 +3,10 @@ const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 // app.use(express.static("public"));
-// app.get("/", (req, res) => {
-//   res.sendFile(__dirname + "public/index.html");
-// });
+const port = process.env.PORT || 3000;
+app.get("/", (req, res) => {
+  res.send("this is test api");
+});
 
 let userArr = [
   {
@@ -102,7 +103,8 @@ io.on("connection", (socket) => {
     io.to(user[0].userId).emit("go_audio_call", {
       fromAudioCall: data.curentUserEmail,
       callUserName: data.currentUser,
-      receveUser: "receveUser",
+      roomName: data.roomName,
+      callStatus: data.callStatus,
     });
   });
   //********************* */ this is audio call aria *********************************
@@ -127,7 +129,7 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
+http.listen(port, () => {
   console.log("listening on *:3000");
 });
 

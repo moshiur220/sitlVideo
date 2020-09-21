@@ -28,10 +28,10 @@
       <ion-icon
         name="call"
         style="margin-right: 10px"
-        (click)="makeCall()"
+        (click)="makeCall('audio')"
       ></ion-icon>
       <!-- [routerLink]="['/audiocall',chatUserEmail,userSocket]" -->
-      <ion-icon name="videocam" [routerLink]="['/videocall']"></ion-icon>
+      <ion-icon name="videocam" (click)="makeCall('video')"></ion-icon>
       <!-- <ion-icon slot="primary" name="add"></ion-icon> -->
     </ion-buttons>
   </ion-toolbar>
@@ -70,7 +70,6 @@
                 <ion-icon
                   name="add-circle-outline"
                   style="font-size: 20px"
-                  (click)="playAudio()"
                 ></ion-icon>
               </button>
             </li>

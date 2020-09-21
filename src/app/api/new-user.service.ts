@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { url } from "./setting";
+// import "../sitlvendor/external_api";
+// declare var JitsiMeetExternalAPI: any;
 @Injectable({
   providedIn: "root",
 })

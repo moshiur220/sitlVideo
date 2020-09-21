@@ -3,7 +3,7 @@ import { Socket } from "ngx-socket-io";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NewUserService } from "../api/new-user.service";
 import { MysocketService } from "../api/mysocket.service";
-
+import { v4 as uuidv4 } from "uuid";
 @Component({
   selector: "app-conversation",
   templateUrl: "./conversation.page.html",
@@ -14,6 +14,7 @@ export class ConversationPage implements OnInit {
   userSocket: string;
   userMessage: string;
   curentUserEmail: string;
+  callarId: string;
   displayMessage = [
     {
       message: "Wellcome to out eshosto",
@@ -40,6 +41,7 @@ export class ConversationPage implements OnInit {
 
     let user = this.userList.returnUser()["userData"][0];
     this.curentUserEmail = user.email;
+    this.callarId = uuidv4();
   }
   //***********************************************************************
   //********************* function ****************************************
@@ -81,13 +83,15 @@ export class ConversationPage implements OnInit {
   }
 
   //********************* make a call ****************************************
-  makeCall() {
+  makeCall(callStatus) {
     // this.sService.callStatus(true, false);
-    this.sService.callAudio = true;
+    // this.sService.callAudio = true;
 
-    this.router.navigateByUrl(
-      `audiocall/${this.chatUserEmail}/${this.userSocket}`
-    );
+    // this.router.navigateByUrl(
+    //   `audiocall/${this.chatUserEmail}/${this.userSocket}`
+    // );
+    window.location.href = `videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket}`;
+    // this.router.navigateByUrl('/product;name=Mango;price=400');
   }
   ngOnInit() {
     this.socket.on("private_message_dispaly", (data) => {
@@ -107,9 +111,8 @@ export class ConversationPage implements OnInit {
     // audio call for go
 
     this.socket.on("go_audio_call", (data) => {
-      this.router.navigateByUrl(
-        `audiocall/${data.fromAudioCall}/${data.callUserName}`
-      );
+      // going to call user
+      window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName}`;
     });
 
     // function make a call

@@ -12,17 +12,28 @@ export class VideocallPage implements OnInit {
   apiObj: any;
   roomName: string;
   userName: string;
+  callerUser: string;
+  callStatus: boolean;
+  callReceiveStatus: false;
+  goCallStatus: string;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private userList: NewUserService
   ) {
     this.route.paramMap.subscribe((param) => {
-      this.roomName = param.get("callId");
+      this.roomName = param.get("callarId");
+      this.callerUser = param.get("callUserName");
+      this.goCallStatus = param.get("callStatus");
+      if (param.get("callStatus") === "video") {
+        this.callStatus = false;
+      } else {
+        this.callStatus = true;
+      }
     });
     // login user info
     let user = this.userList.returnUser()["userData"][0];
-    console.log(user);
+    // console.log(user);
     this.userName = user.userName;
   }
   // where is functions loding
@@ -39,15 +50,15 @@ export class VideocallPage implements OnInit {
         displayName: this.userName,
       },
       configOverwrite: {
-        doNotStoreRoom: true,
-        startVideoMuted: 0,
-        startWithVideoMuted: false,
+        // doNotStoreRoom: true,
+        // startVideoMuted: 0,
+        startWithVideoMuted: this.callStatus,
         startWithAudioMuted: false,
-        enableWelcomePage: false,
-        prejoinPageEnabled: false,
-        disableRemoteMute: true,
+        // enableWelcomePage: true,
+        // prejoinPageEnabled: false,
+        // disableRemoteMute: true,
         remoteVideoMenu: {
-          disableKick: true,
+          disableKick: false,
         },
       },
       interfaceConfigOverwrite: {
@@ -62,7 +73,14 @@ export class VideocallPage implements OnInit {
         // $('#joinMsg').hide();
         // $('#container').show();
         // $('#toolbox').show();
-        console.log("loding");
+        this.socket.emit("userAudioCall", {
+          callUser: this.chatUserEmail,
+          currentUser: this.curreUserName,
+          curentUserEmail: this.curentUserEmail,
+          roomName: this.roomName,
+          callStatus: this.goCallStatus,
+        });
+        console.log("sitl loding");
       },
     };
     this.apiObj = new JitsiMeetExternalAPI(domain, options);
@@ -83,7 +101,7 @@ export class VideocallPage implements OnInit {
   hangup() {
     console.log(this.apiObj);
     // this.videoLoding();
-    // this.apiObj.executeCommand("hangup");
+    this.apiObj.executeCommand("hangup");
   }
   ngOnInit() {
     this.videoLoding();

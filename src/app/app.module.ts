@@ -14,8 +14,12 @@ import { HttpClientModule } from "@angular/common/http";
 
 // socket module inport here
 import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
-
-const config: SocketIoConfig = { url: "http://eshasto.com/myapp", options: {} };
+//http://localhost:3000/
+//https://sitlchat.herokuapp.com/
+const config: SocketIoConfig = {
+  url: "http://localhost:3000/",
+  options: {},
+};
 @NgModule({
   declarations: [AppComponent, ContactPipe, PreloaderPipe],
   entryComponents: [],

@@ -275,3 +275,28 @@ button.nav-btn {
   width: 100% !important;
   height: 100% !important;
 }
+
+// custom css
+#dominantSpeaker {
+  z-index: -1;
+}
+.main-screen:after {
+  content: "";
+  background: var(--themecolor);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.call-audio-video-button-receive .call-receiver-cancel,
+.call-receiver-info.video-call {
+  z-index: 1000;
+}
+
+.caller-information .group-conversation-image {
+  display: flex;
+  margin-bottom: 35px;
+  justify-content: center;
+  margin-top: 100px;
+}

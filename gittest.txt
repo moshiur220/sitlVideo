@@ -11,3 +11,30 @@ git push -u origin master
 git remote add origin git@github.com:moshiur220/sitlVideo.git
 git branch -M master
 git push -u origin master
+
+
+
+====================== Heroku ===============================
+If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
+
+$ heroku login
+Clone the repository
+Use Git to clone sitlchat's source code to your local machine.
+
+$ heroku git:clone -a sitlchat
+$ cd sitlchat
+Deploy your changes
+Make some changes to the code you just cloned and deploy them to Heroku using Git.
+
+$ git add .
+$ git commit -am "make it better"
+$ git push heroku master
+
+
+===================== database==================
+Added the database “eshabiuj_message”.
+password: 0h[lG5=@@nTP
+
+You have successfully created a MySQL user named “eshabiuj_message”.
+
+https://eshasto.com/messageapi

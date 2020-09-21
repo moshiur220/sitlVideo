@@ -43,6 +43,8 @@ export class AudiocallPage implements OnInit {
     audio.src = "../../../assets/mp3/0r.mp3";
     audio.load();
     audio.play();
+    //https://www.w3schools.com/JSREF/met_audio_pause.asp
+    //https://codetogo.io/how-to-stop-audio-in-javascript/
   }
 
   callPlayAudio() {
