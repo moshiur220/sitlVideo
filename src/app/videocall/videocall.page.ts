@@ -1,30 +1,59 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Socket } from "ngx-socket-io";
 import "../sitlvendor/external_api";
 import { NewUserService } from "../api/new-user.service";
+import { chatDomain } from "../api/setting";
+import { MysocketService } from "../api/mysocket.service";
 declare var JitsiMeetExternalAPI: any;
+var apiObj = null;
+
+// receive call
+var audio = new Audio();
+audio.src = "../../../assets/mp3/0c.mp3";
+// dayling call
+var diyalCall = new Audio();
+diyalCall.src = "../../../assets/mp3/0r.mp3";
+
 @Component({
   selector: "app-videocall",
   templateUrl: "./videocall.page.html",
   styleUrls: ["./videocall.page.scss"],
 })
 export class VideocallPage implements OnInit {
-  apiObj: any;
+  // apiObj: any;
+
   roomName: string;
-  userName: string;
+  curreUserName: string;
   callerUser: string;
   callStatus: boolean;
-  callReceiveStatus: false;
+  callReceiveStatus = false;
   goCallStatus: string;
+  coller: string;
+  chatUserEmail: string;
+  curentUserEmail: string;
+  allLoadStatus = true;
+  // display call status
+  callDisplayStatus = "Please receive the call...";
+  // call receive and call ring
+  callAudio: any;
+  callReceiveAudio: any;
+  ringStatus = true;
+  // loding tool box button
+  allButton = false;
   constructor(
+    private socket: Socket,
     private router: Router,
     private route: ActivatedRoute,
-    private userList: NewUserService
+    private userList: NewUserService,
+    private videoSetting: MysocketService
   ) {
     this.route.paramMap.subscribe((param) => {
       this.roomName = param.get("callarId");
       this.callerUser = param.get("callUserName");
       this.goCallStatus = param.get("callStatus");
+      this.coller = param.get("coller");
+      this.chatUserEmail = param.get("charUserEmail");
       if (param.get("callStatus") === "video") {
         this.callStatus = false;
       } else {
@@ -34,80 +63,110 @@ export class VideocallPage implements OnInit {
     // login user info
     let user = this.userList.returnUser()["userData"][0];
     // console.log(user);
-    this.userName = user.userName;
+    this.curreUserName = user.userName;
+    this.curentUserEmail = user.email;
+
+    // call receive and call change audio
   }
   // where is functions loding
 
   videoLoding() {
-    const domain = "mycall.sitlbd.com";
-    const options = {
-      roomName: this.roomName,
-      width: "100%",
-      height: "100%",
-      parentNode: document.querySelector(".wrapper"),
-      DEFAULT_REMOTE_DISPLAY_NAME: "Sitl Default user",
-      userInfo: {
-        displayName: this.userName,
-      },
-      configOverwrite: {
-        // doNotStoreRoom: true,
-        // startVideoMuted: 0,
-        startWithVideoMuted: this.callStatus,
-        startWithAudioMuted: false,
-        // enableWelcomePage: true,
-        // prejoinPageEnabled: false,
-        // disableRemoteMute: true,
-        remoteVideoMenu: {
-          disableKick: false,
-        },
-      },
-      interfaceConfigOverwrite: {
-        filmStripOnly: false,
-        SHOW_JITSI_WATERMARK: false,
-        SHOW_WATERMARK_FOR_GUESTS: false,
-        DEFAULT_REMOTE_DISPLAY_NAME: "New User",
-        TOOLBAR_BUTTONS: [],
-      },
-      onload: function () {
-        //alert('loaded');
-        // $('#joinMsg').hide();
-        // $('#container').show();
-        // $('#toolbox').show();
-        this.socket.emit("userAudioCall", {
-          callUser: this.chatUserEmail,
-          currentUser: this.curreUserName,
-          curentUserEmail: this.curentUserEmail,
-          roomName: this.roomName,
-          callStatus: this.goCallStatus,
-        });
-        console.log("sitl loding");
-      },
-    };
-    this.apiObj = new JitsiMeetExternalAPI(domain, options);
+    apiObj = new JitsiMeetExternalAPI(
+      chatDomain,
+      this.videoSetting.videoCallConfig(
+        this.roomName,
+        this.curreUserName,
+        this.callStatus
+      )
+    );
     // user avater image url
-    this.apiObj.executeCommand(
+    apiObj.executeCommand(
       "avatarUrl",
       "https://www.sitlbd.com/wp-content/uploads/2018/02/sitl_or.png"
     );
-    this.apiObj.addEventListeners({
-      readyToClose: function () {
-        this.router.navigate(["/messagelist"]);
-      },
-    });
+
+    this.allToos();
   }
 
   // hangup() functions
 
-  hangup() {
-    console.log(this.apiObj);
-    // this.videoLoding();
-    this.apiObj.executeCommand("hangup");
+  receiveCall() {
+    this.videoLoding();
+    this.ringStatus = false;
+    // console.log(apiObj);
+    this.allLoadStatus = false;
+
+    if (this.coller === "receive") {
+      diyalCall.pause();
+    }
+    if (this.coller === "call") {
+      audio.pause();
+    }
+  }
+
+  // call close button
+  callClose() {
+    diyalCall.pause();
+    this.router.navigate(["/messagelist"]);
+  }
+  allToos() {
+    // video camera
+    //toolbarBtn
+    document.querySelector(".takae-phot").addEventListener("click", (e) => {
+      console.log(apiObj);
+    });
+
+    //toolbarBtn
+    document.querySelector(".video-btn").addEventListener("click", () => {
+      apiObj.executeCommand("toggleVideo");
+    });
+
+    // audio spicker
+    document.querySelector(".audio-btn").addEventListener("click", () => {
+      apiObj.executeCommand("toggleAudio");
+    });
+    // enable chat
+    document.querySelector(".enable-chat").addEventListener("click", () => {
+      apiObj.executeCommand("toggleChat");
+    });
+
+    // tile view
+    document
+      .querySelector(".video-switch-btn")
+      .addEventListener("click", () => {
+        apiObj.executeCommand("toggleTileView");
+      });
+  }
+  // ================== rintone ==================
+
+  callPlayAudio() {
+    let audio = new Audio();
+    audio.src = "../../../assets/mp3/0c.mp3";
+    // audio.load();
+    // audio.play();
+    return audio;
   }
   ngOnInit() {
-    this.videoLoding();
+    // console.log(this.callReceiveStatus);
+
+    if (this.coller === "call") {
+      this.socket.emit("userAudioCall", {
+        callUser: this.chatUserEmail,
+        currentUser: this.curreUserName,
+        curentUserEmail: this.curentUserEmail,
+        roomName: this.roomName,
+        callStatus: this.goCallStatus,
+      });
+      this.callDisplayStatus = "Colling...";
+      audio.play();
+    }
+    if (this.coller === "receive") {
+      diyalCall.play();
+    }
   }
   ngAfterViewInit(): void {
     // this.videoLoding();
     // this.videoLoding();
+    console.log("after init loding");
   }
 }

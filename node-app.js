@@ -97,8 +97,10 @@ io.on("connection", (socket) => {
 
   //********************* */ this is audio call aria *********************************
   //********************* */ this event for private audion call aria *************
-
+  // http://localhost:8100/videocall;callarId=f19e0656-211f-4147-8313-4e875bede68d;callStatus=audio;charUserEmail=ionic@gmail.com;callUserName=hello%20ionic;coller=receive
   socket.on("userAudioCall", async (data) => {
+    console.log("audio call");
+    console.log(data);
     let user = await privateSocketId(userArr, data.callUser);
     io.to(user[0].userId).emit("go_audio_call", {
       fromAudioCall: data.curentUserEmail,

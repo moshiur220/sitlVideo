@@ -293,10 +293,20 @@ button.nav-btn {
 .call-receiver-info.video-call {
   z-index: 1000;
 }
-
-.caller-information .group-conversation-image {
+.group-conversation-image {
   display: flex;
   margin-bottom: 35px;
   justify-content: center;
   margin-top: 100px;
+}
+
+.call-close {
+  margin-bottom: 100px;
+}
+.call-audio-video-button-receive .call-receiver {
+  height: 70px;
+  width: 70px;
+  background: #2bef2b;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px black;
 }

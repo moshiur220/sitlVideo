@@ -84,13 +84,7 @@ export class ConversationPage implements OnInit {
 
   //********************* make a call ****************************************
   makeCall(callStatus) {
-    // this.sService.callStatus(true, false);
-    // this.sService.callAudio = true;
-
-    // this.router.navigateByUrl(
-    //   `audiocall/${this.chatUserEmail}/${this.userSocket}`
-    // );
-    window.location.href = `videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket}`;
+    window.location.href = `videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket};coller=call`;
     // this.router.navigateByUrl('/product;name=Mango;price=400');
   }
   ngOnInit() {
@@ -112,7 +106,7 @@ export class ConversationPage implements OnInit {
 
     this.socket.on("go_audio_call", (data) => {
       // going to call user
-      window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName}`;
+      window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`;
     });
 
     // function make a call
