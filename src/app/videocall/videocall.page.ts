@@ -34,13 +34,13 @@ export class VideocallPage implements OnInit {
   curentUserEmail: string;
   allLoadStatus = true;
   // display call status
-  callDisplayStatus = "Please receive the call...";
+  callDisplayStatus = "Receive call";
   // call receive and call ring
   callAudio: any;
   callReceiveAudio: any;
   ringStatus = true;
   // loding tool box button
-  allButton = false;
+  allButton = true;
   constructor(
     private socket: Socket,
     private router: Router,
@@ -91,17 +91,24 @@ export class VideocallPage implements OnInit {
   // hangup() functions
 
   receiveCall() {
+    this.socket.emit("screen lock", { callUser: this.chatUserEmail });
     this.videoLoding();
     this.ringStatus = false;
     // console.log(apiObj);
     this.allLoadStatus = false;
+    this.allButton = false;
+    console.log("receive click");
 
     if (this.coller === "receive") {
       diyalCall.pause();
+      console.log("call receive pause......");
     }
     if (this.coller === "call") {
       audio.pause();
+      console.log("call pause......");
     }
+
+    // socket event
   }
 
   // call close button
@@ -158,15 +165,30 @@ export class VideocallPage implements OnInit {
         callStatus: this.goCallStatus,
       });
       this.callDisplayStatus = "Colling...";
+      // this.allLoadStatus = false;
+      this.allButton = false;
       audio.play();
     }
     if (this.coller === "receive") {
       diyalCall.play();
     }
+
+    // user call screen unlock
+    this.socket.on("call screen unlock", (data) => {
+      console.log("screen - unlock here");
+      console.log(data);
+      this.videoLoding();
+      this.ringStatus = false;
+      // console.log(apiObj);
+      this.allLoadStatus = false;
+      this.allButton = false;
+      if (this.coller === "call") {
+        audio.pause();
+        console.log("call pause......");
+      }
+    });
   }
   ngAfterViewInit(): void {
-    // this.videoLoding();
-    // this.videoLoding();
     console.log("after init loding");
   }
 }

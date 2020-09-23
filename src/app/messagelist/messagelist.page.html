@@ -1,4 +1,26 @@
 <ion-content [fullscreen]="true" class="dz-contact-search">
+  <!-- message notifycation  -->
+  <!-- <div class="app-notyfication display-show"> -->
+  <div class="app-notyfication" [ngClass]="{'display-show': msgNotiStatus}">
+    <div class="notify-inner">
+      <div class="notify-left-part">
+        <div class="noti-author-image">
+          <img src="assets/images/th.png" alt="" />
+        </div>
+        <div class="noti-author-description">
+          <h6>{{userName}}</h6>
+          <p>{{userMessage}}</p>
+        </div>
+      </div>
+      <div class="notify-right-part">
+        <div class="noti-buttons">
+          <button class="noto-btn">Close</button>
+          <button class="noti-btn">Go</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End of message notifycation  -->
   <ion-grid>
     <ion-row>
       <ion-col size="12">

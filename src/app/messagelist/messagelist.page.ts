@@ -15,7 +15,18 @@ export class MessagelistPage implements OnInit {
   };
 
   displayUser: any;
+  msgNotiStatus = false;
+  userName: string;
+  userMessage: string;
+  userImg: string;
   constructor(private userList: NewUserService, private socket: Socket) {}
+
+  notiFyaudio() {
+    let audio = new Audio();
+    audio.src = "../../../assets/mp3/message.mp3";
+    // audio.load();
+    audio.play();
+  }
   ngOnInit() {
     let user = this.userList.returnUser()["userData"][0];
     //
@@ -32,6 +43,31 @@ export class MessagelistPage implements OnInit {
     // whent disconnect and connect user in socket
     this.socket.on("show user", (data) => {
       this.displayUser = data;
+    });
+
+    /// tis is test call
+    this.socket.on("call screen unlock", (data) => {
+      console.log("screen - unlock here");
+      console.log(data);
+      console.log("call pause......");
+    });
+
+    // message togal
+    this.socket.on("private_message_dispaly", (data) => {
+      // this.notiFyaudio();
+      this.msgNotiStatus = true;
+      let audio = new Audio();
+      audio.src = "../../../assets/mp3/message.mp3";
+      // audio.load();
+      audio.play();
+      this.userName = data[0].userName;
+      this.userMessage = data[0].message;
+      this.userImg = data[0].userImage;
+
+      console.log(data);
+      setTimeout(() => {
+        this.msgNotiStatus = false;
+      }, 10000);
     });
   }
 }

@@ -84,8 +84,11 @@ export class ConversationPage implements OnInit {
 
   //********************* make a call ****************************************
   makeCall(callStatus) {
-    window.location.href = `videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket};coller=call`;
+    // window.location.href = `videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket};coller=call`;
     // this.router.navigateByUrl('/product;name=Mango;price=400');
+    this.router.navigateByUrl(
+      `/videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket};coller=call`
+    );
   }
   ngOnInit() {
     this.socket.on("private_message_dispaly", (data) => {
@@ -106,7 +109,11 @@ export class ConversationPage implements OnInit {
 
     this.socket.on("go_audio_call", (data) => {
       // going to call user
-      window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`;
+      this.router.navigateByUrl(
+        `/videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`
+      );
+
+      // window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`;
     });
 
     // function make a call
