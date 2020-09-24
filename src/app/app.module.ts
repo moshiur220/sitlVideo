@@ -11,7 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { ContactPipe } from "./contact.pipe";
 import { PreloaderPipe } from "./preloader.pipe";
 import { HttpClientModule } from "@angular/common/http";
-
+import { NgxEmojiPickerModule } from "ngx-emoji-picker";
 // socket module inport here
 import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
 //http://localhost:3000/
@@ -29,6 +29,7 @@ const config: SocketIoConfig = {
     AppRoutingModule,
     HttpClientModule,
     SocketIoModule.forRoot(config),
+    NgxEmojiPickerModule.forRoot(),
   ],
   providers: [
     StatusBar,

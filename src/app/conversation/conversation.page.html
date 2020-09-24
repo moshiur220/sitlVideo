@@ -90,7 +90,13 @@
               placeholder="message..."
               class="dz-text-field"
             ></textarea>
-            <button class="dz-type-icon">
+            <button
+              class="dz-type-icon"
+              (click)="toggled = !toggled"
+              [(emojiPickerIf)]="toggled"
+              [emojiPickerDirection]="'bottom' || 'top' || 'left' || 'right'"
+              (emojiPickerSelect)="handleSelection($event)"
+            >
               <svg
                 width="28"
                 height="28"

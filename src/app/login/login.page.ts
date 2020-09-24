@@ -32,5 +32,11 @@ export class LoginPage implements OnInit {
 
   // test function
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.user.returnUser()) {
+      if (this.user.returnUser().status) {
+        this.router.navigate(["messagelist"]);
+      }
+    }
+  }
 }

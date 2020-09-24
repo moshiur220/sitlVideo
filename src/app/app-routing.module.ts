@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: "",
-    redirectTo: "home",
+    redirectTo: "lodding",
     pathMatch: "full",
   },
   {
@@ -72,6 +72,11 @@ const routes: Routes = [
       import("./messagelist/messagelist.module").then(
         (m) => m.MessagelistPageModule
       ),
+  },
+  {
+    path: "lodding",
+    loadChildren: () =>
+      import("./lodding/lodding.module").then((m) => m.LoddingPageModule),
   },
 ];
 

@@ -310,3 +310,17 @@ button.nav-btn {
   border-radius: 50%;
   box-shadow: 0 3px 6px black;
 }
+
+.back-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.back-button .back-btn {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--themecolor);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
+}

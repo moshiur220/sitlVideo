@@ -95,57 +95,19 @@
           <!-- Start slider  -->
           <div class="dz-slider-part">
             <ion-slides pager="true" [options]="slideOpts">
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/fp.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Fernando</h4>
-                </div>
-              </ion-slide>
-
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/th.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Toby</h4>
-                </div>
-              </ion-slide>
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/fp.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Fernando</h4>
-                </div>
-              </ion-slide>
-
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/ep.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Edward</h4>
-                </div>
-              </ion-slide>
-
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/lv.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Louie</h4>
-                </div>
-              </ion-slide>
-              <ion-slide [routerLink]="['/conversation']">
-                <div class="dz-item dz-active">
-                  <button class="dz-image">
-                    <img src="assets/images/jg.png" class="dz-fig" alt="" />
-                  </button>
-                  <h4>Jeanette</h4>
-                </div>
-              </ion-slide>
+              <span *ngFor="let user of displayUser">
+                <ion-slide
+                  [routerLink]="['/conversation',user.email,user.userName]"
+                  *ngIf="user.status"
+                >
+                  <div class="dz-item dz-active">
+                    <button class="dz-image">
+                      <img src="assets/images/fp.png" class="dz-fig" alt="" />
+                    </button>
+                    <h4>{{user.userName}}</h4>
+                  </div>
+                </ion-slide>
+              </span>
             </ion-slides>
           </div>
           <!-- End of Slider -->

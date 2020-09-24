@@ -4,6 +4,51 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12">
+          <!-- back button -->
+          <div class="back-button" (click)="clicktogoleBtn()">
+            <button class="back-btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+              >
+                <defs>
+                  <clipPath id="clip-path">
+                    <rect
+                      id="Rectangle_18"
+                      data-name="Rectangle 18"
+                      width="18"
+                      height="18"
+                      transform="translate(38.853 38.853)"
+                      fill="#f76215"
+                      stroke="#f76215"
+                      stroke-width="1"
+                    />
+                  </clipPath>
+                </defs>
+                <g
+                  id="Back"
+                  transform="translate(-38.853 -38.853)"
+                  clip-path="url(#clip-path)"
+                >
+                  <path
+                    id="chevron-back-outline"
+                    d="M18.539,6.924l-7.164,7.164,7.164,7.164"
+                    transform="translate(32.649 33.765)"
+                    fill="none"
+                    stroke="#f76215"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+          <!-- back button -->
+
           <!-- group conversation image  -->
           <!-- ========================================================= -->
 
@@ -37,7 +82,7 @@
     <ion-row>
       <ion-col size="12">
         <!-- call receiver information -->
-        <div class="call-receiver-info video-call" *ngIf="! callReceiveStatus">
+        <div class="call-receiver-info video-call" *ngIf="callReceiveStatus">
           <h3>{{callerUser | titlecase}}</h3>
           <p>{{callDisplayStatus}}</p>
         </div>
@@ -98,7 +143,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid fixed>
+  <ion-grid fixed class="video-footer">
     <ion-row>
       <ion-col size="12" class="toolbarBtn">
         <!-- app footer -->

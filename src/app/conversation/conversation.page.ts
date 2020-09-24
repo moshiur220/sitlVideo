@@ -23,6 +23,7 @@ export class ConversationPage implements OnInit {
     },
   ];
   sendCurrentUser: any;
+  toggled: boolean = false;
   constructor(
     private socket: Socket,
     private route: ActivatedRoute,
@@ -89,6 +90,9 @@ export class ConversationPage implements OnInit {
     this.router.navigateByUrl(
       `/videocall;callarId=${this.callarId};callStatus=${callStatus};charUserEmail=${this.chatUserEmail};callUserName=${this.userSocket};coller=call`
     );
+  }
+  handleSelection(event) {
+    this.userMessage += event.char;
   }
   ngOnInit() {
     this.socket.on("private_message_dispaly", (data) => {

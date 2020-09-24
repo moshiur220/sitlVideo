@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule } from "@ionic/angular";
 
-import { ConversationPageRoutingModule } from './conversation-routing.module';
+import { ConversationPageRoutingModule } from "./conversation-routing.module";
 
-import { ConversationPage } from './conversation.page';
-
+import { ConversationPage } from "./conversation.page";
+import { NgxEmojiPickerModule } from "ngx-emoji-picker";
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ConversationPageRoutingModule
+    ConversationPageRoutingModule,
+    NgxEmojiPickerModule,
   ],
-  declarations: [ConversationPage]
+  declarations: [ConversationPage],
 })
 export class ConversationPageModule {}

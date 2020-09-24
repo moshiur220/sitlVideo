@@ -5,6 +5,7 @@ import "../sitlvendor/external_api";
 import { NewUserService } from "../api/new-user.service";
 import { chatDomain } from "../api/setting";
 import { MysocketService } from "../api/mysocket.service";
+import { gsap, Bounce } from "gsap";
 declare var JitsiMeetExternalAPI: any;
 var apiObj = null;
 
@@ -41,6 +42,7 @@ export class VideocallPage implements OnInit {
   ringStatus = true;
   // loding tool box button
   allButton = true;
+  allBtnTogle = true;
   constructor(
     private socket: Socket,
     private router: Router,
@@ -152,6 +154,36 @@ export class VideocallPage implements OnInit {
     // audio.load();
     // audio.play();
     return audio;
+  }
+
+  // video call toggole button
+  clicktogoleBtn() {
+    let ell = gsap.timeline({ defaults: { direction: 1 } });
+    let ell2 = gsap.timeline({ defaults: { direction: 1 } });
+    this.allBtnTogle = !this.allBtnTogle;
+    if (this.allBtnTogle) {
+      console.log(this.allBtnTogle);
+
+      ell.to(".call-audio-video-button", {
+        duration: 1,
+        ease: "none",
+        x: 500,
+      });
+      ell2.to(".video-footer", { duration: 1, ease: "none", y: 500 });
+    } else {
+      console.log(this.allBtnTogle);
+      ell.from(".call-audio-video-button", {
+        duration: 1,
+        ease: "bounce.in",
+        x: "-100%",
+      });
+      ell2.from(".video-footer", {
+        duration: 1,
+        ease: "bounce.in",
+        y: "-100%",
+      });
+    }
+    // console.log(this.allBtnTogle);
   }
   ngOnInit() {
     // console.log(this.callReceiveStatus);

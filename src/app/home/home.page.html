@@ -1,63 +1,56 @@
 <ion-content>
-    <!-- preloader -->
-    <div class="preloader" on-click="preloader()">
-      <span class="ellipse ellipse1"></span>
-      <span class="ellipse ellipse2"></span>
-      <span class="ellipse ellipse3"></span>
-      <span class="ellipse ellipse4"></span>
-      <span class="ellipse ellipse5"></span>
-      <img src="assets/images/logo.png" alt="Logo">
-    </div>
-    <!-- preloader -->
+  <!-- preloader -->
 
-    <ion-grid>
-        <ion-row>
-          <ion-col size="9">
-            <!-- welcome inner -->
-            <div class="welcome-inner">
-              <h3>Welcome to eShasto Chat Services...</h3>
-            </div>
-            <!-- End of welcome inner -->
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    
-      <ion-grid >
-        <ion-row>
-          <ion-col size="10" offset='1'>
-            <!--Start welcome slider -->
-            <div class="slider-inner">
-              <ion-slides pager="true" [options]="slideOpts" >
-                <ion-slide>
-                  <img src="assets/images/wcslider.png" alt="">
-                </ion-slide>
-            
-                <ion-slide>
-                  <img src="assets/images/wcslider2.png" alt="">
-                </ion-slide>
-            
-                <ion-slide>
-                  <img src="assets/images/wcslider3.png" alt="">
-                </ion-slide>
-              </ion-slides>
-          </div>
-            <!--End of welcome slider -->
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    
-    
-      <ion-grid >
-        <ion-row>
-          <ion-col size="12">
-            <!-- Start log information -->
-            <div class="log-info-inner">
-              <button class='log-btn' [routerLink]="['/signup']" >Sign In</button>
-              <button class='log-btn active-log-btn' [routerLink]="['/login']">Login</button>
-            </div>
-            <!-- End of log information -->
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+  <!-- preloader -->
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="9">
+        <!-- welcome inner -->
+        <div class="welcome-inner">
+          <h3>Welcome to eShasto Chat Services...</h3>
+        </div>
+        <!-- End of welcome inner -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <!--Start welcome slider -->
+        <div class="slider-inner">
+          <ion-slides pager="true" [options]="slideOpts">
+            <ion-slide>
+              <img src="assets/images/wcslider.png" alt="" />
+            </ion-slide>
+
+            <ion-slide>
+              <img src="assets/images/wcslider2.png" alt="" />
+            </ion-slide>
+
+            <ion-slide>
+              <img src="assets/images/wcslider3.png" alt="" />
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <!--End of welcome slider -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- Start log information -->
+        <div class="log-info-inner">
+          <button class="log-btn" [routerLink]="['/signup']">Sign In</button>
+          <button class="log-btn active-log-btn" [routerLink]="['/login']">
+            Login
+          </button>
+        </div>
+        <!-- End of log information -->
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-    
