@@ -99,9 +99,11 @@ export class MessagelistPage implements OnInit {
     });
     // make a call
     this.socket.on("go_audio_call", (data) => {
+      console.log(data);
+
       // going to call user
       this.router.navigateByUrl(
-        `/videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`
+        `/videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=${data.coller}`
       );
 
       // window.location.href = `videocall;callarId=${data.roomName};callStatus=${data.callStatus};charUserEmail=${data.fromAudioCall};callUserName=${data.callUserName};coller=receive`;

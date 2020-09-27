@@ -54,7 +54,11 @@ function currentStatus(user, id) {
 
 function privateSocketId(newuserArr, email) {
   return new Promise((resolve, reject) => {
-    resolve(newuserArr.filter((user) => user.email === email)); // Call callBack
+    if (email) {
+      resolve(newuserArr.filter((user) => user.email === email)); // Call callBack
+    } else {
+      reject("email not found");
+    }
   });
 }
 
@@ -120,15 +124,17 @@ io.on("connection", (socket) => {
     let user;
     try {
       user = await privateSocketId(userArr, data.callUser);
+      console.log(data);
+      io.to(user[0].userId).emit("go_audio_call", {
+        fromAudioCall: data.curentUserEmail,
+        callUserName: data.currentUser,
+        roomName: data.roomName,
+        callStatus: data.callStatus,
+        coller: data.coller,
+      });
     } catch (error) {
       console.log(`User Call private user id fiend ${error}`);
     }
-    io.to(user[0].userId).emit("go_audio_call", {
-      fromAudioCall: data.curentUserEmail,
-      callUserName: data.currentUser,
-      roomName: data.roomName,
-      callStatus: data.callStatus,
-    });
   });
   //********************* */ call screen unlock *************
   socket.on("screen lock", async (data) => {

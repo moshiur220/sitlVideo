@@ -311,11 +311,11 @@ button.nav-btn {
   box-shadow: 0 3px 6px black;
 }
 
-.back-button {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
+// .back-button {
+//   position: absolute;
+//   top: 30px;
+//   left: 30px;
+// }
 
 .back-button .back-btn {
   height: 40px;
@@ -323,4 +323,34 @@ button.nav-btn {
   border: 1px solid var(--themecolor);
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.5);
+}
+.toggle-button {
+  position: absolute;
+  width: inherit;
+  display: block;
+  padding: 0 20px;
+  right: auto;
+  bottom: 120px;
+  z-index: 100;
+}
+
+.call-sender-button {
+  position: absolute;
+  top: 21%;
+  transform: translate(-50%);
+  right: 0;
+}
+
+.group-call-close {
+  text-align: right;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.app-group-call {
+  height: 100vh;
+  overflow-y: scroll;
+}
+.display-view {
+  display: none;
 }

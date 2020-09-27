@@ -4,51 +4,6 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <!-- back button -->
-          <div class="back-button" (click)="clicktogoleBtn()">
-            <button class="back-btn">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_18"
-                      data-name="Rectangle 18"
-                      width="18"
-                      height="18"
-                      transform="translate(38.853 38.853)"
-                      fill="#f76215"
-                      stroke="#f76215"
-                      stroke-width="1"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Back"
-                  transform="translate(-38.853 -38.853)"
-                  clip-path="url(#clip-path)"
-                >
-                  <path
-                    id="chevron-back-outline"
-                    d="M18.539,6.924l-7.164,7.164,7.164,7.164"
-                    transform="translate(32.649 33.765)"
-                    fill="none"
-                    stroke="#f76215"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  />
-                </g>
-              </svg>
-            </button>
-          </div>
-          <!-- back button -->
-
           <!-- group conversation image  -->
           <!-- ========================================================= -->
 
@@ -115,6 +70,21 @@
         </div>
         <!-- End of call audio video button -->
 
+        <!-- toggle button -->
+        <div class="toggle-button" (click)="clicktogoleBtn()">
+          <!-- back button -->
+          <div class="back-button">
+            <button class="back-btn">
+              <ion-icon
+                name="chevron-back-outline"
+                style="font-size: 25px; color: var(--themecolor)"
+              ></ion-icon>
+            </button>
+          </div>
+          <!-- back button -->
+        </div>
+        <!-- End of toggle button -->
+
         <div
           class="call-audio-video-button-receive video-call call-receive"
           (click)="callClose()"
@@ -143,7 +113,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-grid fixed class="video-footer">
+  <ion-grid class="video-footer">
     <ion-row>
       <ion-col size="12" class="toolbarBtn">
         <!-- app footer -->
@@ -167,7 +137,7 @@
           <!-- call navigaion -->
           <div class="call-navigation">
             <div class="left-part">
-              <button class="nav-btn">
+              <button class="nav-btn" (click)="groupClose('open')">
                 <ion-icon
                   name="person-add-outline"
                   style="color: #fff; font-size: 24px"
@@ -201,4 +171,46 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <!-- group call list-->
+  <!-- <div class="app-group-call display-view"> -->
+  <div class="app-group-call" [ngClass]="{'display-view': groupcall}">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">
+          <div class="dz-chats">
+            <!-- group call closer -->
+            <div class="group-call-close" (click)="groupClose('close')">
+              <ion-icon
+                name="close-outline"
+                style="color: rgb(255, 145, 0); font-size: 35px"
+              ></ion-icon>
+            </div>
+            <!-- End of group call closer -->
+            <ul class="dz-chat-list">
+              <li *ngFor="let user of displayUser">
+                <div [class.dz-active]="user.status">
+                  <div class="dz-chat-img">
+                    <img src="assets/images/fp.png" class="dz-fig" alt="" />
+                  </div>
+                  <div class="dz-chat-text">
+                    <h3>{{user.userName}}</h3>
+                    <p class="uniqenail">{{user.email}}</p>
+                  </div>
+                  <div class="call-sender-button">
+                    <button (click)="makeGroupCall(user)">
+                      <ion-icon
+                        name="call"
+                        style="font-size: 23px; color: rgb(255, 145, 0)"
+                      ></ion-icon>
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <!-- group call list -->
 </ion-footer>

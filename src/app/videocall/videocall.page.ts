@@ -23,7 +23,7 @@ diyalCall.src = "../../../assets/mp3/0r.mp3";
 })
 export class VideocallPage implements OnInit {
   // apiObj: any;
-
+  displayUser: any;
   roomName: string;
   curreUserName: string;
   callerUser: string;
@@ -43,6 +43,8 @@ export class VideocallPage implements OnInit {
   // loding tool box button
   allButton = true;
   allBtnTogle = true;
+  // group call button status
+  groupcall = true;
   constructor(
     private socket: Socket,
     private router: Router,
@@ -93,15 +95,23 @@ export class VideocallPage implements OnInit {
   // hangup() functions
 
   receiveCall() {
-    this.socket.emit("screen lock", { callUser: this.chatUserEmail });
-    this.videoLoding();
-    this.ringStatus = false;
-    // console.log(apiObj);
-    this.allLoadStatus = false;
-    this.allButton = false;
-    console.log("receive click");
+    if (this.coller === "groupCall") {
+      this.videoLoding();
+      diyalCall.pause();
+      this.ringStatus = false;
+      // console.log(apiObj);
+      this.allLoadStatus = false;
+      this.allButton = false;
+    }
 
     if (this.coller === "receive") {
+      this.socket.emit("screen lock", { callUser: this.chatUserEmail });
+      this.videoLoding();
+      this.ringStatus = false;
+      // console.log(apiObj);
+      this.allLoadStatus = false;
+      this.allButton = false;
+      console.log("receive click");
       diyalCall.pause();
       console.log("call receive pause......");
     }
@@ -158,36 +168,53 @@ export class VideocallPage implements OnInit {
 
   // video call toggole button
   clicktogoleBtn() {
-    let ell = gsap.timeline({ defaults: { direction: 1 } });
-    let ell2 = gsap.timeline({ defaults: { direction: 1 } });
     this.allBtnTogle = !this.allBtnTogle;
     if (this.allBtnTogle) {
       console.log(this.allBtnTogle);
-
-      ell.to(".call-audio-video-button", {
-        duration: 1,
-        ease: "none",
-        x: 500,
-      });
-      ell2.to(".video-footer", { duration: 1, ease: "none", y: 500 });
+      gsap.to(".call-audio-video-button", { duration: 1, opacity: 1 });
+      gsap.to(".video-footer", { duration: 1, opacity: 1 });
     } else {
       console.log(this.allBtnTogle);
-      ell.from(".call-audio-video-button", {
-        duration: 1,
-        ease: "bounce.in",
-        x: "-100%",
-      });
-      ell2.from(".video-footer", {
-        duration: 1,
-        ease: "bounce.in",
-        y: "-100%",
-      });
+      gsap.to(".call-audio-video-button", { opacity: 0, duration: 1 });
+      gsap.to(".video-footer", { opacity: 0, duration: 1 });
     }
     // console.log(this.allBtnTogle);
   }
-  ngOnInit() {
-    // console.log(this.callReceiveStatus);
 
+  // group close and on button
+  groupClose(status) {
+    if (status === "close") {
+      this.groupcall = true;
+      gsap.to(".app-group-call", { opacity: 0, duration: 1 });
+      this.socket.on("show user", (data) => {
+        this.displayUser = data;
+      });
+    }
+    if (status === "open") {
+      this.groupcall = false;
+      gsap.to(".app-group-call", { opacity: 1, duration: 1 });
+      this.socket.on("show user", (data) => {
+        this.displayUser = data;
+      });
+    }
+  }
+
+  // make a group call
+  makeGroupCall(user) {
+    this.socket.emit("userAudioCall", {
+      callUser: user.email,
+      currentUser: this.curreUserName,
+      curentUserEmail: this.curentUserEmail,
+      roomName: this.roomName,
+      callStatus: this.goCallStatus,
+      coller: "groupCall",
+    });
+    this.callDisplayStatus = "Colling...";
+    // this.allLoadStatus = false;
+    this.allButton = false;
+    audio.play();
+  }
+  ngOnInit() {
     if (this.coller === "call") {
       this.socket.emit("userAudioCall", {
         callUser: this.chatUserEmail,
@@ -195,12 +222,17 @@ export class VideocallPage implements OnInit {
         curentUserEmail: this.curentUserEmail,
         roomName: this.roomName,
         callStatus: this.goCallStatus,
+        coller: "receive",
       });
       this.callDisplayStatus = "Colling...";
       // this.allLoadStatus = false;
       this.allButton = false;
       audio.play();
     }
+    if (this.coller === "groupCall") {
+      diyalCall.play();
+    }
+
     if (this.coller === "receive") {
       diyalCall.play();
     }

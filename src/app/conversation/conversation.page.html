@@ -23,7 +23,7 @@
 
     <ion-buttons
       slot="end"
-      style="font-size: 25px; color: var(--themecolor); margin-right: 20px"
+      style="font-size: 25px; margin-right: 20px"
     >
       <ion-icon
         name="call"
@@ -73,7 +73,7 @@
                 ></ion-icon>
               </button>
             </li>
-            <li>
+            <!-- <li>
               <button>
                 <ion-icon
                   name="camera-outline"
@@ -81,7 +81,7 @@
                   (click)="userMessageEvent()"
                 ></ion-icon>
               </button>
-            </li>
+            </li> -->
           </ul>
           <div class="dz-type-msg">
             <textarea
@@ -111,6 +111,10 @@
               </svg>
             </button>
           </div>
+          <button>
+            <ion-icon name="send" style="font-size: 20px; margin-left: 15px; color:rgb(255, 145, 0)"
+            (click)="userMessageEvent()"></ion-icon>
+          </button>
         </div>
       </ion-col>
     </ion-row>
